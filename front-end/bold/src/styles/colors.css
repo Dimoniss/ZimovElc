@@ -1,0 +1,26 @@
+/* Custom color utilities */
+@layer utilities {
+  .bg-navy {
+    @apply bg-[#003366];
+  }
+  
+  .text-navy {
+    @apply text-[#003366];
+  }
+  
+  .bg-orange {
+    @apply bg-[#FF6B00];
+  }
+  
+  .text-orange {
+    @apply text-[#FF6B00];
+  }
+  
+  .hover-orange {
+    @apply hover:bg-[#FF6B00] hover:text-white transition-colors;
+  }
+  
+  .hover-navy {
+    @apply hover:bg-[#003366] hover:text-white transition-colors;
+  }
+}
