@@ -19,8 +19,9 @@ const closeMenu = () => {
 <template>
   <div id="app">
     <!-- Header -->
-    <header>
-      <nav>
+    <header class="navbar">
+      <div class="logo">Zimov Electric</div>
+      <nav class="nav-links">
         <button
           class="menu-toggle"
           @click="showMenu = !showMenu"
@@ -29,14 +30,16 @@ const closeMenu = () => {
           ☰
         </button>
         <div class="menu" :class="{ active: showMenu }">
-          <RouterLink to="/" @click="closeMenu">{{ t("home") }}</RouterLink>
-          <RouterLink to="/services" @click="closeMenu">{{
+          <RouterLink to="/" class="nav-item" @click="closeMenu">{{
+            t("home")
+          }}</RouterLink>
+          <RouterLink to="/services" class="nav-item" @click="closeMenu">{{
             t("services")
           }}</RouterLink>
-          <RouterLink to="/portfolio" @click="closeMenu">{{
+          <RouterLink to="/portfolio" class="nav-item" @click="closeMenu">{{
             t("portfolio")
           }}</RouterLink>
-          <RouterLink to="/contacts" @click="closeMenu">{{
+          <RouterLink to="/contacts" class="nav-item" @click="closeMenu">{{
             t("contacts")
           }}</RouterLink>
         </div>
@@ -60,6 +63,37 @@ const closeMenu = () => {
 </template>
 
 <style scoped>
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: #0c4473;
+  color: #fff;
+  font-size: 1rem;
+}
+
+.nav-links {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #ff7300;
+}
+
+.nav-item {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.nav-item:hover {
+  color: #ff7300;
+}
+
 /* General styles */
 #app {
   font-family: Arial, sans-serif;
