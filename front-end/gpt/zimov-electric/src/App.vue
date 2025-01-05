@@ -31,16 +31,16 @@ const closeMenu = () => {
         </button>
         <div class="menu" :class="{ active: showMenu }">
           <RouterLink to="/" class="nav-item" @click="closeMenu">{{
-            t("home")
+            t("nav.home")
           }}</RouterLink>
           <RouterLink to="/services" class="nav-item" @click="closeMenu">{{
-            t("services")
+            t("nav.services")
           }}</RouterLink>
           <RouterLink to="/portfolio" class="nav-item" @click="closeMenu">{{
-            t("portfolio")
+            t("nav.portfolio")
           }}</RouterLink>
           <RouterLink to="/contacts" class="nav-item" @click="closeMenu">{{
-            t("contacts")
+            t("nav.contacts")
           }}</RouterLink>
         </div>
       </nav>
@@ -57,7 +57,7 @@ const closeMenu = () => {
 
     <!-- Footer -->
     <footer>
-      <p>© 2025 My Website. All Rights Reserved.</p>
+      <p>© 2025 Zimov srl. All Rights Reserved.</p>
     </footer>
   </div>
 </template>

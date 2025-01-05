@@ -2,10 +2,12 @@ import { createI18n } from "vue-i18n";
 
 const messages = {
   en: {
-    home: "Home",
-    services: "Services",
-    portfolio: "Portfolio",
-    contacts: "Contacts",
+    nav: {
+      home: "Home",
+      services: "Services",
+      portfolio: "Portfolio",
+      contacts: "Contacts",
+    },
     hero: {
       title: "Professional Electrical Services",
       subtitle:
@@ -69,12 +71,39 @@ const messages = {
         },
       },
     },
+    services: {
+      title: "Our Services",
+      learnMore: "Learn more",
+      items: {
+        electrical: {
+          title: "Electrical Systems for Private Individuals",
+          description:
+            "Complete electrical solutions for homes including installations, repairs, and upgrades",
+        },
+        photovoltaic: {
+          title: "Photovoltaic Systems",
+          description:
+            "Sustainable solar power solutions for homes and businesses",
+        },
+        automation: {
+          title: "Home Automation",
+          description: "Smart home solutions for modern living",
+        },
+        companies: {
+          title: "Solutions for Companies",
+          description:
+            "Professional electrical services for businesses and commercial properties",
+        },
+      },
+    },
   },
   it: {
-    home: "Home",
-    services: "Servizi",
-    portfolio: "Portfolio",
-    contacts: "Contatti",
+    nav: {
+      home: "Home",
+      services: "Servizi",
+      portfolio: "Portfolio",
+      contacts: "Contatti",
+    },
     hero: {
       title: "Servizi Elettrici Professionali",
       subtitle:
@@ -136,6 +165,30 @@ const messages = {
           title: "Soluzioni di Illuminazione",
           description:
             "Installazione di illuminazione moderna e aggiornamenti efficienti dal punto di vista energetico",
+        },
+      },
+    },
+    services: {
+      title: "I Nostri Servizi",
+      learnMore: "Scopri di più",
+      items: {
+        electrical: {
+          title: "Impianti Elettrici per Privati",
+          description:
+            "Soluzioni elettriche complete per case, inclusa installazione, riparazioni e aggiornamenti",
+        },
+        photovoltaic: {
+          title: "Sistemi Fotovoltaici",
+          description: "Soluzioni solari sostenibili per case e aziende",
+        },
+        automation: {
+          title: "Domotica",
+          description: "Soluzioni smart per la vita moderna",
+        },
+        companies: {
+          title: "Soluzioni per Aziende",
+          description:
+            "Servizi elettrici professionali per aziende e proprietà commerciali",
         },
       },
     },
