@@ -1,72 +1,77 @@
+<script setup>
+import { useI18n } from "vue-i18n";
+import { RouterView, RouterLink } from "vue-router";
+
+const { t } = useI18n(); // Use the translation function
+</script>
+
 <template>
   <div class="home">
     <!-- Hero Section -->
     <section class="hero">
-      <h1>Professional Electrical Services</h1>
-      <p>
-        Expert electrical solutions for residential and commercial properties
-      </p>
-      <button class="cta-button">View Our Services</button>
+      <h1>{{ t("hero.title") }}</h1>
+      <p>{{ t("hero.subtitle") }}</p>
+      <RouterLink to="/services" class="cta-button">{{
+        t("hero.button")
+      }}</RouterLink>
     </section>
 
     <!-- About Us Section -->
     <section class="about">
-      <h2>About Us</h2>
-      <h3>Our Mission</h3>
-      <p>
-        To provide exceptional electrical services with the highest standards of
-        safety, quality, and customer satisfaction.
-      </p>
+      <h2>{{ t("about.title") }}</h2>
+      <h3>{{ t("about.missionTitle") }}</h3>
+      <p>{{ t("about.missionDescription") }}</p>
       <div class="values">
         <div class="value-card">
-          Excellence<br /><small
-            >Delivering superior quality in every project</small
-          >
+          <strong>{{ t("about.values.excellence.title") }}</strong>
+          <br />
+          <small>{{ t("about.values.excellence.description") }}</small>
         </div>
         <div class="value-card">
-          Safety<br /><small>Maintaining the highest safety standards</small>
+          <strong>{{ t("about.values.safety.title") }}</strong>
+          <br />
+          <small>{{ t("about.values.safety.description") }}</small>
         </div>
         <div class="value-card">
-          Reliability<br /><small
-            >Consistent and dependable service delivery</small
-          >
+          <strong>{{ t("about.values.reliability.title") }}</strong>
+          <br />
+          <small>{{ t("about.values.reliability.description") }}</small>
         </div>
         <div class="value-card">
-          Innovation<br /><small>Embracing modern electrical solutions</small>
+          <strong>{{ t("about.values.innovation.title") }}</strong>
+          <br />
+          <small>{{ t("about.values.innovation.description") }}</small>
         </div>
       </div>
     </section>
 
     <!-- Core Competencies Section -->
     <section class="competencies">
-      <h2>Core Competencies</h2>
+      <h2>{{ t("competencies.title") }}</h2>
       <div class="competency-grid">
         <div class="competency-card">
-          <h4>Electrical Installation</h4>
-          <p>
-            Professional installation services for residential and commercial
-            properties
-          </p>
+          <h4>{{ t("competencies.items.installation.title") }}</h4>
+          <p>{{ t("competencies.items.installation.description") }}</p>
         </div>
         <div class="competency-card">
-          <h4>Maintenance & Repairs</h4>
-          <p>Regular maintenance and emergency repair services</p>
+          <h4>{{ t("competencies.items.maintenance.title") }}</h4>
+          <p>{{ t("competencies.items.maintenance.description") }}</p>
         </div>
         <div class="competency-card">
-          <h4>Commercial Services</h4>
-          <p>Specialized solutions for businesses and industrial facilities</p>
+          <h4>{{ t("competencies.items.commercial.title") }}</h4>
+          <p>{{ t("competencies.items.commercial.description") }}</p>
         </div>
         <div class="competency-card">
-          <h4>Residential Services</h4>
-          <p>Complete electrical solutions for homes and apartments</p>
+          <h4>{{ t("competencies.items.residential.title") }}</h4>
+          <p>{{ t("competencies.items.residential.description") }}</p>
         </div>
         <div class="competency-card">
-          <h4>Power Systems</h4>
-          <p>Installation and maintenance of power distribution systems</p>
+          <h4>{{ t("competencies.items.power.title") }}</h4>
+          <p>{{ t("competencies.items.power.description") }}</p>
         </div>
         <div class="competency-card">
-          <h4>Lighting Solutions</h4>
-          <p>Modern lighting installation and energy-efficient upgrades</p>
+          <h4>{{ t("competencies.items.lighting.title") }}</h4>
+          <p>{{ t("competencies.items.lighting.description") }}</p>
         </div>
       </div>
     </section>
