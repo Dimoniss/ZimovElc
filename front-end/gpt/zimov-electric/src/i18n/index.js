@@ -150,6 +150,34 @@ const messages = {
         ],
       },
     },
+    portfolio: {
+      title: "Our Projects",
+      learnMore: "Learn More",
+      projects: {
+        office: {
+          title: "Modern Office Building",
+          description:
+            "Complete electrical installation for a 10-story commercial building",
+        },
+        smartHome: {
+          title: "Smart Home Integration",
+          description:
+            "Smart electrical system installation for luxury residential property",
+        },
+        industrial: {
+          title: "Industrial Facility",
+          description: "Power system upgrade for manufacturing facility",
+        },
+      },
+    },
+    contact: {
+      title: "Contact Us",
+      name: "Name",
+      email: "Email",
+      message: "Message",
+      button: "Send Message",
+      successMessage: "Message sent successfully!",
+    },
   },
   it: {
     nav: {
@@ -300,6 +328,35 @@ const messages = {
         ],
         cta: "Richiedi un immagine di sistema fotovoltaico",
       },
+    },
+    portfolio: {
+      title: "I Nostri Progetti",
+      learnMore: "Scopri di più",
+      projects: {
+        office: {
+          title: "Edificio per Uffici Moderno",
+          description:
+            "Installazione elettrica completa per un edificio commerciale di 10 piani",
+        },
+        smartHome: {
+          title: "Integrazione Domotica",
+          description:
+            "Installazione di sistema elettrico intelligente per proprietà residenziale di lusso",
+        },
+        industrial: {
+          title: "Struttura Industriale",
+          description:
+            "Aggiornamento del sistema elettrico per una struttura di produzione",
+        },
+      },
+    },
+    contact: {
+      title: "Contattaci",
+      name: "Nome",
+      email: "Email",
+      message: "Messaggio",
+      button: "Invia Messaggio",
+      successMessage: "Messaggio inviato con successo!",
     },
   },
 };
