@@ -95,6 +95,60 @@ const messages = {
             "Professional electrical services for businesses and commercial properties",
         },
       },
+      keyFeatures: "Key Features",
+      electrical: {
+        title: "Electrical Systems for Private Individuals",
+        description:
+          "Our residential electrical services cover everything from basic wiring to complete home electrical system installations. We ensure your home's electrical system is safe, efficient, and up to code.",
+        features: [
+          "Electrical system installation and upgrades",
+          "Safety inspections and code compliance",
+          "Indoor and outdoor lighting installation",
+          "Circuit breaker panel services",
+          "Emergency electrical repairs",
+        ],
+        cta: "Schedule a Consultation",
+      },
+      photovoltaic: {
+        title: "Photovoltaic Systems",
+        description:
+          "Transform your energy consumption with our state-of-the-art photovoltaic systems. We provide complete solar solutions from design to installation and maintenance.",
+        features: [
+          "Solar panel installation",
+          "Energy consumption analysis",
+          "Maintenance and monitoring services",
+          "System design and planning",
+          "Battery storage solutions",
+        ],
+        cta: "Get Solar Estimate",
+      },
+      automation: {
+        title: "Home Automation",
+        description:
+          "Experience the convenience of smart home automation. Our solutions include remote control, motion detection, and energy monitoring.",
+        features: [
+          "Remote control",
+          "Motion detection",
+          "Energy monitoring",
+          "Smart home integration",
+          "Security systems",
+          "Smart lighting",
+        ],
+        cta: "Get Automation Estimate",
+      },
+      companies: {
+        title: "Solutions for Companies",
+        description:
+          "We offer comprehensive electrical services for businesses and commercial properties. Our experienced professionals provide customized solutions to meet your specific needs.",
+        features: [
+          "Electrical system installation and upgrades",
+          "Safety inspections and code compliance",
+          "Maintenance and monitoring services",
+          "System design and planning",
+          "Circuit breaker panel services",
+          "Emergency electrical repairs",
+        ],
+      },
     },
   },
   it: {
@@ -190,6 +244,61 @@ const messages = {
           description:
             "Servizi elettrici professionali per aziende e proprietà commerciali",
         },
+      },
+      keyFeatures: "Caratteristiche Principali",
+      electrical: {
+        title: "Impianti Elettrici per Privati",
+        description:
+          "I nostri servizi elettrici residenziali coprono tutto, dai cablaggi di base alle installazioni complete degli impianti elettrici domestici. Garantiamo che il tuo impianto elettrico sia sicuro, efficiente e a norma.",
+        features: [
+          "Installazione e aggiornamento di impianti elettrici",
+          "Ispezioni di sicurezza e conformità normativa",
+          "Installazione di illuminazione interna ed esterna",
+          "Servizi per quadri elettrici",
+          "Riparazioni elettriche di emergenza",
+        ],
+        cta: "Pianifica una consulenza",
+      },
+      photovoltaic: {
+        title: "Sistemi Fotovoltaici",
+        description:
+          "Offriamo soluzioni solari sostenibili per case e aziende. Siamo esperti nella realizzazione di sistemi fotovoltaici per la produzione di energia elettrica sostenibile.",
+        features: [
+          "Installazione di pannelli solari",
+          "Analisi del consumo energetico",
+          "Manutenzione e servizi di monitoraggio",
+          "Progettazione e pianificazione del sistema",
+          "Soluzioni per l'accumulo di energia",
+        ],
+        cta: "Richiedi un immagine di sistema fotovoltaico",
+      },
+      automation: {
+        title: "Domotica",
+        description:
+          "Offriamo soluzioni per la domotica moderna. Siamo esperti nella realizzazione di sistemi domotici per la gestione della casa e dell'azienda.",
+        features: [
+          "Controllo remoto",
+          "Rilevamento di movimento",
+          "Monitoraggio energetico",
+          "Integrazione con casa intelligente",
+          "Sistemi di sicurezza",
+          "Illuminazione intelligente",
+        ],
+        cta: "Richiedi un immagine di sistema domotico",
+      },
+      companies: {
+        title: "Soluzioni per Aziende",
+        description:
+          "Offriamo soluzioni elettriche professionali per aziende e proprietà commerciali. Siamo esperti nella realizzazione di impianti elettrici per aziende e strutture industriali.",
+        features: [
+          "Installazione e aggiornamento di impianti elettrici",
+          "Ispezioni di sicurezza e conformità normativa",
+          "Manutenzione e monitoraggio dei servizi",
+          "Progettazione e pianificazione del sistema",
+          "Servizi per quadri elettrici",
+          "Riparazioni elettriche di emergenza",
+        ],
+        cta: "Richiedi un immagine di sistema fotovoltaico",
       },
     },
   },

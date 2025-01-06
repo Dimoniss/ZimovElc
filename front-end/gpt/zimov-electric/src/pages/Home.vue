@@ -11,7 +11,7 @@ const { t } = useI18n(); // Use the translation function
     <section class="hero">
       <h1>{{ t("hero.title") }}</h1>
       <p>{{ t("hero.subtitle") }}</p>
-      <RouterLink to="/services" class="cta-button">{{
+      <RouterLink to="/services" class="cta-button-home">{{
         t("hero.button")
       }}</RouterLink>
     </section>
@@ -103,7 +103,7 @@ const { t } = useI18n(); // Use the translation function
   margin-bottom: 2rem;
 }
 
-.cta-button {
+.cta-button-home {
   background-color: #ff7300;
   color: #fff;
   border: none;

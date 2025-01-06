@@ -5,14 +5,15 @@ import { RouterView, RouterLink } from "vue-router";
 
 const { t, locale } = useI18n();
 
-const switchLanguage = (lang) => {
-  locale.value = lang;
-};
+const isEnglish = ref(locale.value === "en");
 
-const showMenu = ref(false);
-
-const closeMenu = () => {
-  showMenu.value = false;
+const toggleLanguage = () => {
+  if (isEnglish.value) {
+    locale.value = "it";
+  } else {
+    locale.value = "en";
+  }
+  isEnglish.value = !isEnglish.value;
 };
 </script>
 
@@ -45,8 +46,15 @@ const closeMenu = () => {
         </div>
       </nav>
       <div class="language-switcher">
-        <button @click="switchLanguage('en')">English</button>
-        <button @click="switchLanguage('it')">Italiano</button>
+        <label class="toggle">
+          <input
+            type="checkbox"
+            :checked="isEnglish"
+            @change="toggleLanguage"
+          />
+          <span class="slider"></span>
+        </label>
+        <span>{{ isEnglish ? "English" : "Italiano" }}</span>
       </div>
     </header>
 
@@ -63,6 +71,7 @@ const closeMenu = () => {
 </template>
 
 <style scoped>
+/* Navbar Styles */
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -94,53 +103,56 @@ const closeMenu = () => {
   color: #ff7300;
 }
 
-/* General styles */
-#app {
-  font-family: Arial, sans-serif;
-  line-height: 1.5;
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-header {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem;
-  background-color: #615c5c;
-  border-bottom: 1px solid #ddd;
-  color: #ffffff;
-}
-
-nav {
+/* Toggle Button */
+.language-switcher {
   display: flex;
   align-items: center;
-  gap: 1rem;
+  gap: 0.5rem;
 }
 
-nav a {
-  text-decoration: none;
-  color: #ffffff;
-  font-weight: bold;
+.toggle {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 25px;
 }
 
-nav a:hover {
-  color: #ffd700;
+.toggle input {
+  opacity: 0;
+  width: 0;
+  height: 0;
 }
 
-.language-switcher button {
-  background: none;
-  border: none;
+.slider {
+  position: absolute;
   cursor: pointer;
-  font-size: 1rem;
-  margin-left: 1rem;
-  color: #ffffff;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  border-radius: 25px;
+  transition: 0.4s;
 }
 
-.language-switcher button:hover {
-  color: #ffd700;
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 19px;
+  width: 19px;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  border-radius: 50%;
+  transition: 0.4s;
+}
+
+input:checked + .slider {
+  background-color: #2196f3;
+}
+
+input:checked + .slider:before {
+  transform: translateX(25px);
 }
 
 /* Responsive Menu */
@@ -164,28 +176,7 @@ nav a:hover {
   gap: 0.5rem;
 }
 
-/* Main content */
-main {
-  flex-grow: 1;
-  width: 100%;
-  height: 100%;
-}
-
-footer {
-  text-align: center;
-  padding: 1rem;
-  background-color: #f8f9fa;
-  border-top: 1px solid #ddd;
-  margin-top: 2rem;
-}
-
-/* Responsive Design */
 @media (max-width: 768px) {
-  header {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
   .menu {
     display: none;
     flex-direction: column;
