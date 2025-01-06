@@ -6,7 +6,9 @@ import { RouterView, RouterLink } from "vue-router";
 const { t, locale } = useI18n();
 
 const isEnglish = ref(locale.value === "en");
+const showMenu = ref(false); // Reactive variable for toggling the menu
 
+// Toggle language function
 const toggleLanguage = () => {
   if (isEnglish.value) {
     locale.value = "it";
@@ -14,6 +16,11 @@ const toggleLanguage = () => {
     locale.value = "en";
   }
   isEnglish.value = !isEnglish.value;
+};
+
+// Function to close the menu after clicking a link
+const closeMenu = () => {
+  showMenu.value = false;
 };
 </script>
 

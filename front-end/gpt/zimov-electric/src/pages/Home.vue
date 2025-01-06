@@ -115,7 +115,7 @@ const { t } = useI18n(); // Use the translation function
   transition: background-color 0.3s ease;
 }
 
-.cta-button:hover {
+.cta-button-home:hover {
   background-color: #e36600;
 }
 
@@ -186,5 +186,42 @@ const { t } = useI18n(); // Use the translation function
 .competency-card p {
   font-size: 0.9rem;
   color: #555;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .values,
+  .competency-grid {
+    grid-template-columns: repeat(1, 1fr); /* One per row on small screens */
+  }
+
+  .value-card,
+  .competency-card {
+    display: flex;
+    flex-direction: row; /* Horizontal arrangement */
+    align-items: center;
+    gap: 1rem; /* Space between elements */
+  }
+
+  .value-card strong,
+  .competency-card h4 {
+    font-size: 1rem;
+    margin: 0;
+  }
+
+  .value-card small,
+  .competency-card p {
+    font-size: 0.85rem;
+  }
+}
+
+@media (min-width: 769px) {
+  .values {
+    grid-template-columns: repeat(4, 1fr); /* Four per row on larger screens */
+  }
+
+  .competency-grid {
+    grid-template-columns: repeat(3, 1fr); /* Three per row on larger screens */
+  }
 }
 </style>
