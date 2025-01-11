@@ -127,7 +127,7 @@ const { t } = useI18n();
     </section>
 
     <!-- CTA Section -->
-    <RouterLink to="/contact" class="cta-button">
+    <RouterLink to="/contacts" class="cta-button">
       {{ t("services.photovoltaic.cta") }}
     </RouterLink>
   </div>

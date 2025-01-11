@@ -7,6 +7,7 @@ const { t, locale } = useI18n();
 
 const isEnglish = ref(locale.value === "en");
 const showMenu = ref(false); // Reactive variable for toggling the menu
+const showServicesDropdown = ref(false); // For the "Services" dropdown
 
 // Toggle language function
 const toggleLanguage = () => {
@@ -21,6 +22,7 @@ const toggleLanguage = () => {
 // Function to close the menu after clicking a link
 const closeMenu = () => {
   showMenu.value = false;
+  showServicesDropdown.value = false; // Close dropdown when menu is closed
 };
 </script>
 
@@ -28,31 +30,74 @@ const closeMenu = () => {
   <div id="app">
     <!-- Header -->
     <header class="navbar">
-      <div class="logo">Zimov Electric</div>
-      <nav class="nav-links">
-        <button
-          class="menu-toggle"
-          @click="showMenu = !showMenu"
-          aria-label="Toggle Menu"
-        >
-          ☰
-        </button>
-        <div class="menu" :class="{ active: showMenu }">
-          <RouterLink to="/" class="nav-item" @click="closeMenu">{{
-            t("nav.home")
-          }}</RouterLink>
-          <RouterLink to="/services" class="nav-item" @click="closeMenu">{{
-            t("nav.services")
-          }}</RouterLink>
-          <RouterLink to="/portfolio" class="nav-item" @click="closeMenu">{{
+      <div class="navbar-left">
+        <!-- Make the logo clickable -->
+        <RouterLink to="/" class="logo" @click="closeMenu">
+          Zimov Electric
+        </RouterLink>
+        <nav class="nav-links">
+          <button
+            class="menu-toggle"
+            @click="showMenu = !showMenu"
+            aria-label="Toggle Menu"
+          >
+            ☰
+          </button>
+          <div class="menu" :class="{ active: showMenu }">
+            <RouterLink to="/" class="nav-item" @click="closeMenu">{{
+              t("nav.home")
+            }}</RouterLink>
+            <div
+              class="nav-item dropdown"
+              @mouseenter="showServicesDropdown = true"
+              @mouseleave="showServicesDropdown = false"
+            >
+              <RouterLink to="/services" class="nav-item" @click="closeMenu">{{
+                t("nav.services")
+              }}</RouterLink>
+              <div class="dropdown-menu" v-if="showServicesDropdown">
+                <RouterLink
+                  to="/services/electrical"
+                  class="dropdown-item"
+                  @click="closeMenu"
+                >
+                  {{ t("nav.servicesItems.electrical") }}
+                </RouterLink>
+                <RouterLink
+                  to="/services/photovoltaic"
+                  class="dropdown-item"
+                  @click="closeMenu"
+                >
+                  {{ t("nav.servicesItems.photovoltaic") }}
+                </RouterLink>
+                <RouterLink
+                  to="/services/automation"
+                  class="dropdown-item"
+                  @click="closeMenu"
+                >
+                  {{ t("nav.servicesItems.automation") }}
+                </RouterLink>
+                <RouterLink
+                  to="/services/companies"
+                  class="dropdown-item"
+                  @click="closeMenu"
+                >
+                  {{ t("nav.servicesItems.companies") }}
+                </RouterLink>
+              </div>
+            </div>
+            <!--           <RouterLink to="/portfolio" class="nav-item" @click="closeMenu">{{
             t("nav.portfolio")
-          }}</RouterLink>
-          <RouterLink to="/contacts" class="nav-item" @click="closeMenu">{{
-            t("nav.contacts")
-          }}</RouterLink>
-        </div>
-      </nav>
+          }}</RouterLink> -->
+            <RouterLink to="/contacts" class="nav-item" @click="closeMenu">{{
+              t("nav.contacts")
+            }}</RouterLink>
+          </div>
+        </nav>
+      </div>
+
       <div class="language-switcher">
+        <span class="lang-label">IT</span>
         <label class="toggle">
           <input
             type="checkbox"
@@ -61,7 +106,7 @@ const closeMenu = () => {
           />
           <span class="slider"></span>
         </label>
-        <span>{{ isEnglish ? "English" : "Italiano" }}</span>
+        <span class="lang-label">ENG</span>
       </div>
     </header>
 
@@ -80,6 +125,11 @@ const closeMenu = () => {
 <style scoped>
 /* Navbar Styles */
 .navbar {
+  position: fixed; /* Fix the navbar at the top of the viewport */
+  top: 0; /* Align it to the top */
+  left: 0; /* Align it to the left */
+  width: 100%; /* Make it span the full width of the viewport */
+  z-index: 1000; /* Ensure it stays above other elements */
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -87,6 +137,13 @@ const closeMenu = () => {
   background-color: #0c4473;
   color: #fff;
   font-size: 1rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-left {
+  display: flex;
+  align-items: center;
+  gap: 2rem; /* Space between logo and menu */
 }
 
 .nav-links {
@@ -98,23 +155,66 @@ const closeMenu = () => {
   font-size: 1.5rem;
   font-weight: bold;
   color: #ff7300;
+  text-decoration: none; /* Remove underline for the logo */
+  cursor: pointer; /* Indicate it's clickable */
 }
 
 .nav-item {
-  color: #fff;
+  color: #fff; /* Default color is white */
   text-decoration: none;
   font-weight: 500;
+  position: relative;
+  transition: color 0.3s ease;
 }
 
 .nav-item:hover {
-  color: #ff7300;
+  color: #ff7300; /* Change color on hover */
 }
 
-/* Toggle Button */
+/* Dropdown Menu */
+.dropdown {
+  position: relative;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #ffffff;
+  color: #000;
+  border-radius: 4px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  z-index: 10;
+}
+
+.dropdown-item {
+  padding: 0.5rem 1rem;
+  color: #000; /* Default dropdown item color */
+  text-decoration: none;
+  white-space: nowrap;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.dropdown-item:hover {
+  background-color: #f4f4f4;
+  color: #0c4473; /* Change color on hover */
+}
+
+/* Language Switcher */
 .language-switcher {
   display: flex;
+  padding: 0 3rem;
   align-items: center;
-  gap: 0.5rem;
+  justify-content: center;
+  gap: 0.5rem; /* Space between elements */
+}
+
+.lang-label {
+  font-size: 0.9rem;
+  font-weight: bold;
+  color: #fff; /* White text for contrast */
 }
 
 .toggle {
@@ -137,8 +237,8 @@ const closeMenu = () => {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: #ccc;
-  border-radius: 25px;
+  background-color: #ccc; /* Default background color */
+  border-radius: 25px; /* Rounded edges */
   transition: 0.4s;
 }
 
@@ -149,17 +249,17 @@ const closeMenu = () => {
   width: 19px;
   left: 3px;
   bottom: 3px;
-  background-color: white;
+  background-color: #000; /* Default circle color */
   border-radius: 50%;
   transition: 0.4s;
 }
 
 input:checked + .slider {
-  background-color: #2196f3;
+  background-color: #2196f3; /* Background color when active */
 }
 
 input:checked + .slider:before {
-  transform: translateX(25px);
+  transform: translateX(25px); /* Move the circle to the right */
 }
 
 /* Responsive Menu */

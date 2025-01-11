@@ -7,6 +7,12 @@ const messages = {
       services: "Services",
       portfolio: "Portfolio",
       contacts: "Contacts",
+      servicesItems: {
+        electrical: "Electrical",
+        photovoltaic: "Photovoltaic",
+        automation: "Automation",
+        companies: "Companies",
+      },
     },
     hero: {
       title: "Professional Electrical Services",
@@ -185,6 +191,12 @@ const messages = {
       services: "Servizi",
       portfolio: "Portfolio",
       contacts: "Contatti",
+      servicesItems: {
+        electrical: "Elettrico",
+        photovoltaic: "Fotovoltaico",
+        automation: "Automazione",
+        companies: "Aziende",
+      },
     },
     hero: {
       title: "Servizi Elettrici Professionali",
