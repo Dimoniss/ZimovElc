@@ -31,6 +31,7 @@ const handleSubmit = () => {
   padding: 4rem 2rem;
   background-color: #fff;
   text-align: center;
+  padding-top: 70px;
 }
 
 h2 {

@@ -1,19 +1,66 @@
 <script setup>
+import { ref, onMounted } from "vue";
 import { useI18n } from "vue-i18n";
 import { RouterView, RouterLink } from "vue-router";
 
+import heroBackground1 from "../assets/hero-slide/slide_1.jpg";
+import heroBackground2 from "../assets/hero-slide/slide_2.jpg";
+import heroBackground3 from "../assets/hero-slide/slide_3.jpg";
+import heroBackground4 from "../assets/hero-slide/slide_4.jpg";
+
 const { t } = useI18n(); // Use the translation function
+
+// list of images for the slider
+const sliderImages = ref([
+  heroBackground1,
+  heroBackground2,
+  heroBackground3,
+  heroBackground4,
+]);
+
+const currentSlide = ref(0); // Current slide index
+const backgroundImage = ref(sliderImages.value[0]); // Initial background image
+
+// function to change the slide
+const nextSlide = () => {
+  currentSlide.value = (currentSlide.value + 1) % sliderImages.value.length;
+  backgroundImage.value = sliderImages.value[currentSlide.value];
+};
+
+// automatic slide change
+onMounted(() => {
+  setInterval(() => {
+    nextSlide();
+  }, 5000); // change slide every 5 seconds
+});
 </script>
 
 <template>
   <div class="home">
     <!-- Hero Section -->
-    <section class="hero">
+
+    <section class="hero" :class="`hero-background-${currentSlide + 1}`">
       <h1>{{ t("hero.title") }}</h1>
       <p>{{ t("hero.subtitle") }}</p>
       <RouterLink to="/services" class="cta-button-home">{{
         t("hero.button")
       }}</RouterLink>
+      <!-- Slider -->
+      <div class="slider">
+        <button @click="currentHeroSlide--" :disabled="currentSlide === 0">
+          ‹
+        </button>
+        <div class="slides">
+          <img
+            v-for="(image, index) in sliderImages"
+            :key="index"
+            :src="image"
+            :alt="'Slide ' + (index + 1)"
+            :class="{ active: index === currentSlide }"
+          />
+        </div>
+        <button @click="nextHeroSlide">›</button>
+      </div>
     </section>
 
     <!-- About Us Section -->
@@ -116,6 +163,22 @@ const { t } = useI18n(); // Use the translation function
 </template>
 
 <style scoped>
+.hero-background-1 {
+  background-image: url("../assets/hero-slide/slide_1.jpg");
+}
+
+.hero-background-2 {
+  background-image: url("../assets/hero-slide/slide_2.jpg");
+}
+
+.hero-background-3 {
+  background-image: url("../assets/hero-slide/slide_3.jpg");
+}
+
+.hero-background-4 {
+  background-image: url("../assets/hero-slide/slide_4.jpg");
+}
+
 /* General Layout */
 .home {
   font-family: Arial, sans-serif;
@@ -124,24 +187,34 @@ const { t } = useI18n(); // Use the translation function
 
 /* Hero Section */
 .hero {
-  text-align: center;
+  position: relative;
   padding: 4rem 2rem;
-  background-color: #0c4473;
+  text-align: center;
+  background-size: cover;
+  background-position: center;
+  transition: background-image 1s ease-in-out; /* Smooth background change */
   color: #fff;
+  min-height: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .hero h1 {
   font-size: 2.5rem;
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
+  text-shadow: 0px 1px 3px rgba(0, 0, 0, 0.7);
 }
 
 .hero p {
   font-size: 1.2rem;
   margin-bottom: 2rem;
+  text-shadow: 0px 1px 3px rgba(0, 0, 0, 0.7);
 }
 
 .cta-button-home {
-  background-color: #ff7300;
+  background-color: #ff9b42;
   color: #fff;
   border: none;
   padding: 1rem 2rem;
@@ -156,11 +229,56 @@ const { t } = useI18n(); // Use the translation function
   background-color: #e36600;
 }
 
+/* Slider */
+.slider {
+  position: absolute;
+  bottom: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  width: 100%;
+}
+
+.slides {
+  display: flex;
+  overflow: hidden;
+  width: 60%;
+  max-height: 80px;
+}
+
+.slides img {
+  width: 100px;
+  height: 60px;
+  margin: 0 5px;
+  opacity: 0.6;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.slides img.active {
+  opacity: 1;
+  border: 2px solid #fff;
+}
+
+button {
+  background: rgba(0, 0, 0, 0.5);
+  border: none;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  border-radius: 50%;
+}
+
+button:hover {
+  background: rgba(255, 255, 255, 0.8);
+  color: #000;
+}
+
 /* About Us Section */
 .about {
   padding: 4rem 2rem;
   text-align: center;
-  background-color: #f9f9f9;
+  background-color: #828080;
 }
 
 .about h2 {

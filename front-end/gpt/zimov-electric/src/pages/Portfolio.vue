@@ -39,6 +39,7 @@ const { t } = useI18n(); // Translation function
   padding: 4rem 2rem;
   background-color: #f9f9f9;
   text-align: center;
+  padding-top: 70px;
 }
 
 h2 {

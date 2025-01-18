@@ -1,5 +1,5 @@
 <script setup>
-import { ref } from "vue";
+import { ref, onMounted, onUnmounted } from "vue";
 import { useI18n } from "vue-i18n";
 import { RouterView, RouterLink } from "vue-router";
 
@@ -8,6 +8,21 @@ const { t, locale } = useI18n();
 const isEnglish = ref(locale.value === "en");
 const showMenu = ref(false); // Reactive variable for toggling the menu
 const showServicesDropdown = ref(false); // For the "Services" dropdown
+const isScrolled = ref(false);
+
+// Add scroll listener to detect scrolling
+const handleScroll = () => {
+  isScrolled.value = window.scrollY > 50;
+};
+
+// Attach and detach event listener
+onMounted(() => {
+  window.addEventListener("scroll", handleScroll);
+});
+
+onUnmounted(() => {
+  window.removeEventListener("scroll", handleScroll);
+});
 
 // Toggle language function
 const toggleLanguage = () => {
@@ -29,12 +44,9 @@ const closeMenu = () => {
 <template>
   <div id="app">
     <!-- Header -->
-    <header class="navbar">
+    <header :class="['navbar', { 'navbar-scrolled': isScrolled }]">
+      <div class="logo-placeholder">LOGO</div>
       <div class="navbar-left">
-        <!-- Make the logo clickable -->
-        <RouterLink to="/" class="logo" @click="closeMenu">
-          Zimov Electric
-        </RouterLink>
         <nav class="nav-links">
           <button
             class="menu-toggle"
@@ -129,21 +141,37 @@ const closeMenu = () => {
   top: 0; /* Align it to the top */
   left: 0; /* Align it to the left */
   width: 100%; /* Make it span the full width of the viewport */
+  height: 90px;
   z-index: 1000; /* Ensure it stays above other elements */
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 2rem;
-  background-color: #0c4473;
+  background-color: transparent;
   color: #fff;
   font-size: 1rem;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: none;
+  transition: background-color 0.4s ease;
+  text-shadow: 0px 1px 3px rgba(0, 0, 0, 0.7);
+}
+
+.navbar-scrolled {
+  background-color: #000;
+}
+
+/* Logo Placeholder */
+.logo-placeholder {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #ff7300; /* Placeholder color */
+  cursor: pointer;
+  margin: 3rem;
 }
 
 .navbar-left {
   display: flex;
   align-items: center;
   gap: 2rem; /* Space between logo and menu */
+  margin: 3rem;
 }
 
 .nav-links {
@@ -151,16 +179,8 @@ const closeMenu = () => {
   gap: 1.5rem;
 }
 
-.logo {
-  font-size: 1.5rem;
-  font-weight: bold;
-  color: #ff7300;
-  text-decoration: none; /* Remove underline for the logo */
-  cursor: pointer; /* Indicate it's clickable */
-}
-
 .nav-item {
-  color: #fff; /* Default color is white */
+  color: #ffffff; /* Default color is white */
   text-decoration: none;
   font-weight: 500;
   position: relative;
@@ -214,7 +234,7 @@ const closeMenu = () => {
 .lang-label {
   font-size: 0.9rem;
   font-weight: bold;
-  color: #fff; /* White text for contrast */
+  color: #ffffff; /* White text for contrast */
 }
 
 .toggle {
@@ -237,7 +257,7 @@ const closeMenu = () => {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: #ccc; /* Default background color */
+  background-color: #86a873; /* Default background color */
   border-radius: 25px; /* Rounded edges */
   transition: 0.4s;
 }

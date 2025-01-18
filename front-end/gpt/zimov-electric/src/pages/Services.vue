@@ -51,6 +51,7 @@ const { t } = useI18n(); // Use the translation function
   font-family: Arial, sans-serif;
   color: #333;
   padding: 2rem;
+  padding-top: 70px;
 }
 
 /* Header section */
