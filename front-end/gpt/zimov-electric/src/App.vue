@@ -56,21 +56,30 @@ const closeMenu = () => {
             ☰
           </button>
           <div class="menu" :class="{ active: showMenu }">
-            <RouterLink to="/" class="nav-item" @click="closeMenu">{{
-              t("nav.home")
-            }}</RouterLink>
+            <RouterLink
+              to="/"
+              class="nav-item"
+              :class="{ 'scrolled-item': isScrolled }"
+              @click="closeMenu"
+              >{{ t("nav.home") }}</RouterLink
+            >
             <div
               class="nav-item dropdown"
               @mouseenter="showServicesDropdown = true"
               @mouseleave="showServicesDropdown = false"
             >
-              <RouterLink to="/services" class="nav-item" @click="closeMenu">{{
-                t("nav.services")
-              }}</RouterLink>
+              <RouterLink
+                to="/services"
+                class="nav-item"
+                :class="{ 'scrolled-item': isScrolled }"
+                @click="closeMenu"
+                >{{ t("nav.services") }}</RouterLink
+              >
               <div class="dropdown-menu" v-if="showServicesDropdown">
                 <RouterLink
                   to="/services/electrical"
                   class="dropdown-item"
+                  :class="{ 'scrolled-item': isScrolled }"
                   @click="closeMenu"
                 >
                   {{ t("nav.servicesItems.electrical") }}
@@ -78,6 +87,7 @@ const closeMenu = () => {
                 <RouterLink
                   to="/services/photovoltaic"
                   class="dropdown-item"
+                  :class="{ 'scrolled-item': isScrolled }"
                   @click="closeMenu"
                 >
                   {{ t("nav.servicesItems.photovoltaic") }}
@@ -85,6 +95,7 @@ const closeMenu = () => {
                 <RouterLink
                   to="/services/automation"
                   class="dropdown-item"
+                  :class="{ 'scrolled-item': isScrolled }"
                   @click="closeMenu"
                 >
                   {{ t("nav.servicesItems.automation") }}
@@ -92,18 +103,23 @@ const closeMenu = () => {
                 <RouterLink
                   to="/services/companies"
                   class="dropdown-item"
+                  :class="{ 'scrolled-item': isScrolled }"
                   @click="closeMenu"
                 >
                   {{ t("nav.servicesItems.companies") }}
                 </RouterLink>
               </div>
             </div>
-            <!--           <RouterLink to="/portfolio" class="nav-item" @click="closeMenu">{{
+            <!--           <RouterLink to="/portfolio" class="nav-item" :class="{ 'scrolled-item': isScrolled }" @click="closeMenu">{{
             t("nav.portfolio")
           }}</RouterLink> -->
-            <RouterLink to="/contacts" class="nav-item" @click="closeMenu">{{
-              t("nav.contacts")
-            }}</RouterLink>
+            <RouterLink
+              to="/contacts"
+              class="nav-item"
+              :class="{ 'scrolled-item': isScrolled }"
+              @click="closeMenu"
+              >{{ t("nav.contacts") }}</RouterLink
+            >
           </div>
         </nav>
       </div>
@@ -147,7 +163,6 @@ const closeMenu = () => {
   justify-content: space-between;
   align-items: center;
   background-color: transparent;
-  color: #fff;
   font-size: 1rem;
   box-shadow: none;
   transition: background-color 0.4s ease;
@@ -155,7 +170,15 @@ const closeMenu = () => {
 }
 
 .navbar-scrolled {
-  background-color: #000;
+  background-color: #ffffff;
+}
+
+.navbar-scrolled .nav-item {
+  color: #ff7300; /* Цвет текста при скролле */
+}
+
+.navbar-scrolled .nav-item:hover {
+  color: #0c4473; /* Цвет текста при наведении, если скролл активен */
 }
 
 /* Logo Placeholder */
@@ -180,11 +203,14 @@ const closeMenu = () => {
 }
 
 .nav-item {
-  color: #ffffff; /* Default color is white */
+  color: #000000;
+  transition: color 0.4s ease; /* Плавный переход цвета */
   text-decoration: none;
   font-weight: 500;
   position: relative;
   transition: color 0.3s ease;
+  font-size: x-large;
+  font-weight: bold;
 }
 
 .nav-item:hover {
@@ -257,7 +283,7 @@ const closeMenu = () => {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: #86a873; /* Default background color */
+  background-color: #ff7300; /* Default background color */
   border-radius: 25px; /* Rounded edges */
   transition: 0.4s;
 }

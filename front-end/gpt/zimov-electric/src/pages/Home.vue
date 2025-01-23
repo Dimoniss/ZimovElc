@@ -12,19 +12,26 @@ const { t } = useI18n(); // Use the translation function
 
 // list of images for the slider
 const sliderImages = ref([
-  heroBackground1,
-  heroBackground2,
-  heroBackground3,
-  heroBackground4,
+  { src: heroBackground1, text: "Slide 1" },
+  { src: heroBackground2, text: "Slide 2" },
+  { src: heroBackground3, text: "Slide 3" },
+  { src: heroBackground4, text: "Slide 4" },
 ]);
 
 const currentSlide = ref(0); // Current slide index
 const backgroundImage = ref(sliderImages.value[0]); // Initial background image
 
-// function to change the slide
+// function to change to next slide
 const nextSlide = () => {
   currentSlide.value = (currentSlide.value + 1) % sliderImages.value.length;
   backgroundImage.value = sliderImages.value[currentSlide.value];
+};
+
+// function to change to previous slide
+const prevSlide = () => {
+  currentSlide.value =
+    (currentSlide.value - 1 + sliderImages.value.length) %
+    sliderImages.value.length;
 };
 
 // automatic slide change
@@ -47,47 +54,67 @@ onMounted(() => {
       }}</RouterLink>
       <!-- Slider -->
       <div class="slider">
-        <button @click="currentHeroSlide--" :disabled="currentSlide === 0">
-          ‹
-        </button>
+        <button class="slider-button left" @click="prevSlide">‹</button>
         <div class="slides">
           <img
-            v-for="(image, index) in sliderImages"
+            v-for="(slide, index) in sliderImages"
             :key="index"
-            :src="image"
+            :src="slide.src"
             :alt="'Slide ' + (index + 1)"
             :class="{ active: index === currentSlide }"
           />
         </div>
-        <button @click="nextHeroSlide">›</button>
+        <button class="slider-button right" @click="nextSlide">›</button>
       </div>
     </section>
 
     <!-- About Us Section -->
     <section class="about">
       <h2>{{ t("about.title") }}</h2>
-      <h3>{{ t("about.missionTitle") }}</h3>
-      <p>{{ t("about.missionDescription") }}</p>
       <div class="values">
         <div class="value-card">
-          <strong>{{ t("about.values.excellence.title") }}</strong>
-          <br />
-          <small>{{ t("about.values.excellence.description") }}</small>
+          <div class="value-text">
+            <strong>{{ t("about.values.excellence.title") }}</strong>
+            <p>{{ t("about.values.excellence.description") }}</p>
+          </div>
+          <img
+            src="../assets/about_us/excellence.png"
+            alt="Excellence"
+            class="value-image"
+          />
         </div>
         <div class="value-card">
-          <strong>{{ t("about.values.safety.title") }}</strong>
-          <br />
-          <small>{{ t("about.values.safety.description") }}</small>
+          <div class="value-text">
+            <strong>{{ t("about.values.safety.title") }}</strong>
+            <p>{{ t("about.values.safety.description") }}</p>
+          </div>
+          <img
+            src="../assets/about_us/safety.png"
+            alt="Safety"
+            class="value-image"
+          />
         </div>
         <div class="value-card">
-          <strong>{{ t("about.values.reliability.title") }}</strong>
-          <br />
-          <small>{{ t("about.values.reliability.description") }}</small>
+          <div class="value-text">
+            <strong>{{ t("about.values.reliability.title") }}</strong>
+            <p>{{ t("about.values.reliability.description") }}</p>
+          </div>
+          <img
+            src="../assets/about_us/reliability.png"
+            alt="Reliability"
+            class="value-image"
+          />
         </div>
         <div class="value-card">
-          <strong>{{ t("about.values.innovation.title") }}</strong>
-          <br />
-          <small>{{ t("about.values.innovation.description") }}</small>
+          <div class="value-text">
+            <strong>{{ t("about.values.innovation.title") }}</strong>
+            <p>{{ t("about.values.innovation.description") }}</p>
+          </div>
+          <img
+            src="../assets/about_us/innovation.png"
+            alt="Innovation"
+            class="value-image"
+          />
         </div>
       </div>
     </section>
@@ -97,26 +124,56 @@ onMounted(() => {
       <h2>{{ t("competencies.title") }}</h2>
       <div class="competency-grid">
         <div class="competency-card">
+          <img
+            src="../assets/competencies/installation.png"
+            alt="Installation"
+            class="competency-image"
+          />
           <h4>{{ t("competencies.items.installation.title") }}</h4>
           <p>{{ t("competencies.items.installation.description") }}</p>
         </div>
         <div class="competency-card">
+          <img
+            src="../assets/competencies/maintenance.png"
+            alt="Maintenance"
+            class="competency-image"
+          />
           <h4>{{ t("competencies.items.maintenance.title") }}</h4>
           <p>{{ t("competencies.items.maintenance.description") }}</p>
         </div>
         <div class="competency-card">
+          <img
+            src="../assets/competencies/commercial.png"
+            alt="Commercial"
+            class="competency-image"
+          />
           <h4>{{ t("competencies.items.commercial.title") }}</h4>
           <p>{{ t("competencies.items.commercial.description") }}</p>
         </div>
         <div class="competency-card">
+          <img
+            src="../assets/competencies/residential.png"
+            alt="Residential"
+            class="competency-image"
+          />
           <h4>{{ t("competencies.items.residential.title") }}</h4>
           <p>{{ t("competencies.items.residential.description") }}</p>
         </div>
         <div class="competency-card">
+          <img
+            src="../assets/competencies/power_system.png"
+            alt="Power"
+            class="competency-image"
+          />
           <h4>{{ t("competencies.items.power.title") }}</h4>
           <p>{{ t("competencies.items.power.description") }}</p>
         </div>
         <div class="competency-card">
+          <img
+            src="../assets/competencies/lighting.png"
+            alt="Lighting"
+            class="competency-image"
+          />
           <h4>{{ t("competencies.items.lighting.title") }}</h4>
           <p>{{ t("competencies.items.lighting.description") }}</p>
         </div>
@@ -194,7 +251,7 @@ onMounted(() => {
   background-position: center;
   transition: background-image 1s ease-in-out; /* Smooth background change */
   color: #fff;
-  min-height: 400px;
+  min-height: 800px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -238,18 +295,19 @@ onMounted(() => {
   justify-content: center;
   gap: 1rem;
   width: 100%;
+  height: 170px;
 }
 
 .slides {
   display: flex;
   overflow: hidden;
   width: 60%;
-  max-height: 80px;
+  max-height: 160px;
 }
 
 .slides img {
-  width: 100px;
-  height: 60px;
+  width: 200px;
+  height: 150px;
   margin: 0 5px;
   opacity: 0.6;
   transition: opacity 0.5s ease-in-out;
@@ -264,9 +322,12 @@ button {
   background: rgba(0, 0, 0, 0.5);
   border: none;
   color: #fff;
-  padding: 0.5rem 1rem;
+  padding: 0.4rem;
   cursor: pointer;
   border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  font-size: 2rem;
 }
 
 button:hover {
@@ -276,40 +337,86 @@ button:hover {
 
 /* About Us Section */
 .about {
-  padding: 4rem 2rem;
+  padding: 4rem 0;
+  background-color: #ffffff;
   text-align: center;
-  background-color: #828080;
 }
 
 .about h2 {
   font-size: 2rem;
-  margin-bottom: 1rem;
-}
-
-.about h3 {
-  font-size: 1.5rem;
-  margin-bottom: 0.5rem;
-}
-
-.about p {
   margin-bottom: 2rem;
-  font-size: 1rem;
-  color: #555;
 }
 
+/* Values Section */
 .values {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 1rem;
+  display: flex;
+  flex-direction: column;
 }
 
 .value-card {
-  background-color: #fff;
-  padding: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 50vh; /* Высота на весь экран */
+  padding: 2rem;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.value-card:nth-child(even) {
+  flex-direction: row-reverse; /* Чередуем порядок для четных карточек */
+}
+
+.value-text {
+  width: 50%; /* Текст занимает половину экрана */
+  padding: 2rem;
+  text-align: left;
+}
+
+.value-text strong {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.value-text p {
+  font-size: 1.2rem;
+  color: #555;
+}
+
+.value-image {
+  width: 50%; /* Картинка занимает половину экрана */
+  height: 100%;
+  object-fit: cover;
   border-radius: 8px;
-  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
-  font-size: 1rem;
-  color: #333;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+  .value-card {
+    flex-direction: column; /* Вертикальная структура на мобильных устройствах */
+    height: auto;
+  }
+
+  .value-card:nth-child(even) {
+    flex-direction: column; /* Убираем реверс для мобильной версии */
+  }
+
+  .value-text,
+  .value-image {
+    width: 100%; /* Элементы занимают всю ширину */
+  }
+
+  .value-image {
+    height: auto;
+  }
+
+  .value-text {
+    text-align: center; /* Текст по центру на мобильных устройствах */
+    padding: 1rem;
+  }
 }
 
 /* Core Competencies Section */
@@ -331,6 +438,17 @@ button:hover {
   padding: 1.5rem;
   border-radius: 8px;
   box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.competency-image {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  margin-bottom: 1rem;
+  border-radius: 5%;
 }
 
 .competency-card h4 {
