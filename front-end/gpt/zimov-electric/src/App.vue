@@ -163,7 +163,6 @@ const closeMenu = () => {
   justify-content: space-between;
   align-items: center;
   background-color: transparent;
-  font-size: 1rem;
   box-shadow: none;
   transition: background-color 0.4s ease;
   text-shadow: 0px 1px 3px rgba(0, 0, 0, 0.7);
@@ -209,8 +208,8 @@ const closeMenu = () => {
   font-weight: 500;
   position: relative;
   transition: color 0.3s ease;
-  font-size: x-large;
-  font-weight: bold;
+  font-size: 1.3rem;
+  font-weight: 700;
 }
 
 .nav-item:hover {
@@ -238,6 +237,7 @@ const closeMenu = () => {
 .dropdown-item {
   padding: 0.5rem 1rem;
   color: #000; /* Default dropdown item color */
+  font-weight: 400;
   text-decoration: none;
   white-space: nowrap;
   transition: background-color 0.3s ease, color 0.3s ease;
