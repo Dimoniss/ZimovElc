@@ -157,7 +157,7 @@ const closeMenu = () => {
   top: 0; /* Align it to the top */
   left: 0; /* Align it to the left */
   width: 100%; /* Make it span the full width of the viewport */
-  height: 90px;
+  height: 110px;
   z-index: 1000; /* Ensure it stays above other elements */
   display: flex;
   justify-content: space-between;
@@ -165,7 +165,7 @@ const closeMenu = () => {
   background-color: transparent;
   box-shadow: none;
   transition: background-color 0.4s ease;
-  text-shadow: 0px 1px 3px rgba(0, 0, 0, 0.7);
+  text-shadow: 0px 2px 3px rgba(0, 0, 0, 0.7);
 }
 
 .navbar-scrolled {
@@ -173,7 +173,7 @@ const closeMenu = () => {
 }
 
 .navbar-scrolled .nav-item {
-  color: #ff7300; /* Цвет текста при скролле */
+  color: #000000; /* Цвет текста при скролле */
 }
 
 .navbar-scrolled .nav-item:hover {
@@ -202,7 +202,7 @@ const closeMenu = () => {
 }
 
 .nav-item {
-  color: #000000;
+  color: #ffffff;
   transition: color 0.4s ease; /* Плавный переход цвета */
   text-decoration: none;
   font-weight: 500;
@@ -213,7 +213,7 @@ const closeMenu = () => {
 }
 
 .nav-item:hover {
-  color: #ff7300; /* Change color on hover */
+  color: #000000; /* Change color on hover */
 }
 
 /* Dropdown Menu */
@@ -237,7 +237,7 @@ const closeMenu = () => {
 .dropdown-item {
   padding: 0.5rem 1rem;
   color: #000; /* Default dropdown item color */
-  font-weight: 400;
+  font-weight: 450;
   text-decoration: none;
   white-space: nowrap;
   transition: background-color 0.3s ease, color 0.3s ease;
@@ -260,7 +260,7 @@ const closeMenu = () => {
 .lang-label {
   font-size: 0.9rem;
   font-weight: bold;
-  color: #ffffff; /* White text for contrast */
+  color: #ff7300; /* White text for contrast */
 }
 
 .toggle {
@@ -286,6 +286,7 @@ const closeMenu = () => {
   background-color: #ff7300; /* Default background color */
   border-radius: 25px; /* Rounded edges */
   transition: 0.4s;
+  box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.7);
 }
 
 .slider:before {
