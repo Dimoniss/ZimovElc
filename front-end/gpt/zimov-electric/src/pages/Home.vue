@@ -49,6 +49,7 @@ onMounted(() => {
     <section class="hero" :class="`hero-background-${currentSlide + 1}`">
       <h1>{{ t("hero.title") }}</h1>
       <p>{{ t("hero.subtitle") }}</p>
+      <p>{{ t("hero.description") }}</p>
       <RouterLink to="/services" class="cta-button-home">{{
         t("hero.button")
       }}</RouterLink>
@@ -113,6 +114,17 @@ onMounted(() => {
           <img
             src="../assets/about_us/innovation.png"
             alt="Innovation"
+            class="value-image"
+          />
+        </div>
+        <div class="value-card">
+          <div class="value-text">
+            <strong>{{ t("about.values.professionalism.title") }}</strong>
+            <p>{{ t("about.values.professionalism.description") }}</p>
+          </div>
+          <img
+            src="../assets/about_us/professionalism.png"
+            alt="Professionalism"
             class="value-image"
           />
         </div>

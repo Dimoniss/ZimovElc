@@ -15,32 +15,41 @@ const messages = {
       },
     },
     hero: {
-      title: "Professional Electrical Services",
+      title: "Professional and Reliable Electrical Services",
       subtitle:
-        "Expert electrical solutions for residential and commercial properties",
-      button: "View Our Services",
+        "Expert electrical solutions for residential, commercial, and industrial properties. We are committed to delivering safety, efficiency, and innovation in every project.",
+      description:
+        "Our team of qualified technicians works with precision and attention to detail to meet the specific needs of our clients. From installations to repairs, we handle every electrical aspect with a professional approach.",
+      button: "Discover More About Our Services",
     },
     about: {
       title: "About Us",
       missionTitle: "Our Mission",
-      missionDescription:
-        "To provide exceptional electrical services with the highest standards of safety, quality, and customer satisfaction.",
       values: {
         excellence: {
           title: "Excellence",
-          description: "Delivering superior quality in every project",
+          description:
+            "We are committed to delivering superior quality in every project we undertake. Our dedication to excellence is reflected in our attention to detail, use of premium materials, and adoption of the most innovative technologies. Every task is carried out with precision, ensuring results that exceed our clients' expectations.",
         },
         safety: {
           title: "Safety",
-          description: "Maintaining the highest safety standards",
+          description:
+            "Safety is our top priority in every project. We strictly adhere to the highest safety standards, implementing advanced protocols and using certified materials to protect people and property. Every task is carried out with care to ensure a secure and reliable environment.",
         },
         reliability: {
           title: "Reliability",
-          description: "Consistent and dependable service delivery",
+          description:
+            "Our mission is to provide consistent and dependable service delivery every time. With our expertise and professionalism, we ensure timely and high-quality results, building trust with our clients. Every project is managed with precision and a commitment to meeting expectations.",
         },
         innovation: {
           title: "Innovation",
-          description: "Embracing modern electrical solutions",
+          description:
+            "We are dedicated to adopting modern and cutting-edge electrical solutions. By leveraging the most innovative technologies, we enhance the efficiency, sustainability, and safety of our projects. Our ability to integrate new ideas allows us to provide tailored solutions that meet the ever-evolving needs of our clients.",
+        },
+        professionalism: {
+          title: "Professionalism",
+          description:
+            "We are a team of highly skilled professionals dedicated to delivering top-quality solutions in every project we undertake. Our attention to detail and commitment to excellence set us apart in our field.",
         },
       },
     },
@@ -50,30 +59,32 @@ const messages = {
         installation: {
           title: "Electrical Installation",
           description:
-            "Professional installation services for residential and commercial properties",
+            "We provide professional electrical installation services for residential and commercial properties. Our team of experts handles everything from new installations to complex systems, ensuring safety, efficiency, and compliance with the highest standards. We use high-quality materials and advanced technologies to deliver durable and reliable results.",
         },
         maintenance: {
-          title: "Maintenance & Repairs",
-          description: "Regular maintenance and emergency repair services",
+          title: "Maintenance and Repairs",
+          description:
+            "We provide comprehensive regular maintenance and emergency repair services for residential and commercial electrical systems. Our team is available for prompt and precise interventions, ensuring that every system remains safe, efficient, and compliant with standards. With a proactive approach, we identify and address issues before they escalate.",
         },
         commercial: {
           title: "Commercial Services",
           description:
-            "Specialized solutions for businesses and industrial facilities",
+            "We provide specialized solutions for businesses and industrial facilities, tailored to meet the unique needs of each client. From installing complex systems to preventive maintenance, we ensure operational efficiency, safety, and compliance with regulatory standards. Our experienced team works with precision to deliver high-quality results that support the growth of your business.",
         },
         residential: {
           title: "Residential Services",
-          description: "Complete electrical solutions for homes and apartments",
+          description:
+            "We provide comprehensive electrical solutions for houses and apartments, ensuring safety, efficiency, and comfort. Our team of professionals handles installations, maintenance, and repairs using modern technologies and high-quality materials. Whether upgrading your electrical system or installing new equipment, we ensure every detail is tailored to meet your home's needs.",
         },
         power: {
           title: "Power Systems",
           description:
-            "Installation and maintenance of power distribution systems",
+            "We provide professional services for the installation and maintenance of power distribution systems. Our expert team designs and implements reliable and safe solutions to ensure efficient and consistent electricity distribution. We also optimize existing systems to maximize their efficiency and compliance with regulatory standards.",
         },
         lighting: {
           title: "Lighting Solutions",
           description:
-            "Modern lighting installation and energy-efficient upgrades",
+            "We provide modern lighting installations and energy-efficient upgrades to enhance the aesthetics and functionality of any space. Whether for residential, commercial, or industrial lighting, we use advanced technologies to create tailored solutions that combine energy efficiency, sustainability, and innovative design.",
         },
       },
     },
@@ -82,23 +93,114 @@ const messages = {
       learnMore: "Learn more",
       items: {
         electrical: {
-          title: "Electrical Systems for Private Individuals",
+          title: "Electrical Works",
           description:
             "Complete electrical solutions for homes including installations, repairs, and upgrades",
+          civili: {
+            title: "Residential Electrical Systems",
+            designAndInstall:
+              "Design and installation of electrical systems for homes.",
+            electricalPanels:
+              "Assembly and testing of electrical panels, including load distribution and calculation.",
+            cables:
+              "Laying of electrical cables and wires according to usage objectives.",
+            lightPoints:
+              "Installation of outlets, switches, and light points, both traditional and smart (Internet-connected).",
+            lightingSystems: "Customized indoor and outdoor lighting systems.",
+            automationDoors:
+              "Automation of gates, doors, windows, shutters, and motorized blinds.",
+            electricStations:
+              "Installation of charging stations for electric vehicles.",
+            automationPanel:
+              "Development of home automation systems for controlling lights, shutters, and climate systems.",
+            renewableEnergySystems:
+              "Design and installation of photovoltaic solar panels and other renewable energy systems.",
+            certification:
+              "Certification of compliance for electrical systems.",
+          },
+          industrial: {
+            title: "Industrial Electrical Systems",
+            designAndInstall:
+              "Design and installation of electrical systems for industrial facilities.",
+            lightPoints:
+              "Implementation of high-efficiency industrial lighting systems.",
+            industrialSystems:
+              "Laying power and control cables for machinery and industrial systems.",
+            electricalSafety:
+              "Electrical safety solutions and fault prevention.",
+          },
         },
-        photovoltaic: {
-          title: "Photovoltaic Systems",
+        telecommunications: {
+          title: "Telecommunications",
           description:
-            "Sustainable solar power solutions for homes and businesses",
+            "We provide comprehensive telecommunications solutions, including structured cabling, fiber optic networks, and wireless configurations to ensure seamless connectivity for homes and businesses.",
+          designAndInstall:
+            "Design and installation of structured cabling for Internet networks in homes, offices, and businesses.",
+          wirelessNetworks: "Configuration of wired and wireless networks.",
+          fiberOptic: "Development of fiber optic networks (FTTH, FTTO, FTTB).",
+          Starlink:
+            "Installation of Internet connections using Starlink antennas.",
         },
-        automation: {
-          title: "Home Automation",
-          description: "Smart home solutions for modern living",
-        },
-        companies: {
-          title: "Solutions for Companies",
+        securitySystems: {
+          title: "Security Systems",
           description:
-            "Professional electrical services for businesses and commercial properties",
+            "We offer advanced security systems, including intrusion alarms, surveillance cameras, fire detection, and remote monitoring solutions for complete protection and peace of mind.",
+          alarmSystems:
+            "Installation of anti-intrusion alarm systems, including wireless options.",
+          surveillance:
+            "Mounting and configuration of surveillance cameras (CCTV and IP).",
+          fireDetectionSystems: "Advanced smoke and fire detection systems.",
+          remoteMonitoring:
+            "Integration of security systems with smartphones for remote monitoring.",
+        },
+        special: {
+          title: "Special Services",
+          description: "",
+          renewableEnergySystems: {
+            title: "Renewable Energy Systems",
+            description:
+              "We specialize in designing and installing renewable energy systems, including solar, wind, and biomass solutions, to enhance efficiency and promote sustainability.",
+            designAndInstall:
+              "Design and installation of photovoltaic, wind, and biomass systems.",
+            analysisAndEfficiency:
+              "Energy savings analysis and efficiency evaluations.",
+          },
+          smartHome: {
+            title: "Home Automation and Smart Home",
+            description:
+              "We provide innovative home automation solutions, integrating smart systems for lighting, climate control, security, and IoT devices for a connected and convenient living experience.",
+            systemsForControlling:
+              "Installation of smart systems for controlling lights, shutters, climate, and security.",
+            voiceAssistants:
+              "Configuration of voice assistants (e.g., Alexa, Google Home) and IoT devices.",
+          },
+          maintenanceAndDiagnostics: {
+            title: "Advanced Maintenance and Diagnostics",
+            description:
+              "We offer advanced maintenance and diagnostics services, including thermographic inspections and predictive analysis, to ensure optimal performance and prevent system failures.",
+            thermographicInspection:
+              "Thermographic inspections to identify thermal leaks and electrical issues.",
+            predictiveAnalysis:
+              "Predictive diagnostics to prevent failures and improve system efficiency.",
+          },
+          chargingInfrastructure: {
+            title: "EV Charging Infrastructure",
+            description:
+              "We provide tailored EV charging infrastructure solutions, including the installation of home and commercial charging stations and consulting for efficient and scalable networks.",
+            chargingStations:
+              "Installation of home and commercial EV charging stations (Tesla and universal systems).",
+            consulting:
+              "Consulting for designing efficient and customized charging networks.",
+          },
+          lighting: {
+            title: "Creative and LED Lighting",
+            description:
+              "We design and install customized creative and LED lighting solutions, combining energy efficiency with aesthetic appeal for homes, businesses, and special events.",
+            design:
+              "Design of custom lighting systems for interiors and exteriors.",
+            energySavings:
+              "LED solutions for energy savings and special decorations (gardens, events, venues).",
+          },
         },
       },
       keyFeatures: "Key Features",
@@ -199,32 +301,41 @@ const messages = {
       },
     },
     hero: {
-      title: "Servizi Elettrici Professionali",
+      title: "Servizi Elettrici Professionali e Affidabili",
       subtitle:
-        "Soluzioni elettriche esperte per proprietà residenziali e commerciali",
-      button: "Visualizza i nostri servizi",
+        "Offriamo soluzioni elettriche esperte per proprietà residenziali, commerciali e industriali. Ci impegniamo a garantire sicurezza, efficienza e innovazione in ogni progetto.",
+      description:
+        "Il nostro team di tecnici qualificati lavora con precisione e attenzione ai dettagli per soddisfare le esigenze specifiche dei nostri clienti. Dalle installazioni alle riparazioni, ci prendiamo cura di ogni aspetto elettrico con un approccio professionale.",
+      button: "Scopri di più sui nostri servizi",
     },
     about: {
       title: "Chi Siamo",
       missionTitle: "La Nostra Missione",
-      missionDescription:
-        "Fornire servizi elettrici eccezionali con i più alti standard di sicurezza, qualità e soddisfazione del cliente.",
       values: {
         excellence: {
           title: "Eccellenza",
-          description: "Garantire una qualità superiore in ogni progetto",
+          description:
+            "Ci impegniamo a fornire una qualità superiore in ogni progetto che intraprendiamo. La nostra dedizione all'eccellenza si riflette nell'attenzione ai dettagli, nell'utilizzo di materiali di prima scelta e nell'adozione delle tecnologie più innovative. Ogni lavoro è svolto con precisione, garantendo risultati che superano le aspettative dei nostri clienti.",
         },
         safety: {
           title: "Sicurezza",
-          description: "Mantenere i più alti standard di sicurezza",
+          description:
+            "La sicurezza è la nostra priorità assoluta in ogni progetto. Rispettiamo rigorosamente i più alti standard di sicurezza, adottando protocolli avanzati e materiali certificati per proteggere le persone e le proprietà. Ogni lavoro è eseguito con attenzione per garantire un ambiente sicuro e affidabile.",
         },
         reliability: {
           title: "Affidabilità",
-          description: "Servizio coerente e affidabile",
+          description:
+            "La nostra missione è garantire un servizio costante e su cui poter contare in ogni occasione. Grazie alla nostra esperienza e professionalità, assicuriamo risultati puntuali e di alta qualità, costruendo un rapporto di fiducia con i nostri clienti. Ogni progetto è gestito con precisione e rispetto degli impegni presi.",
         },
         innovation: {
           title: "Innovazione",
-          description: "Adottare soluzioni elettriche moderne",
+          description:
+            "Siamo costantemente impegnati ad adottare soluzioni elettriche moderne e all'avanguardia. Utilizziamo le tecnologie più innovative per migliorare l'efficienza, la sostenibilità e la sicurezza dei nostri progetti. La nostra capacità di integrare nuove idee ci consente di offrire soluzioni su misura che soddisfano le esigenze in continua evoluzione dei nostri clienti.",
+        },
+        professionalism: {
+          title: "Professionalità",
+          description:
+            "Siamo un team di professionisti altamente qualificati, dedicati a fornire soluzioni di alta qualità in ogni progetto che affrontiamo. La nostra attenzione ai dettagli e il nostro impegno verso l'eccellenza ci distinguono nel nostro settore.",
         },
       },
     },
@@ -234,31 +345,32 @@ const messages = {
         installation: {
           title: "Installazione Elettrica",
           description:
-            "Servizi di installazione professionale per proprietà residenziali e commerciali",
+            "Offriamo servizi professionali di installazione elettrica per proprietà residenziali e commerciali. Il nostro team di esperti si occupa di tutto, dalle nuove installazioni ai sistemi complessi, garantendo sicurezza, efficienza e conformità agli standard più elevati. Utilizziamo materiali di alta qualità e tecnologie avanzate per assicurare un risultato duraturo e affidabile.",
         },
         maintenance: {
           title: "Manutenzione e Riparazioni",
           description:
-            "Servizi di manutenzione regolare e riparazioni di emergenza",
+            "Offriamo servizi completi di manutenzione regolare e riparazioni di emergenza per sistemi elettrici residenziali e commerciali. Il nostro team è disponibile per interventi tempestivi e accurati, assicurando che ogni impianto rimanga sicuro, efficiente e conforme agli standard. Con un approccio proattivo, identifichiamo e risolviamo i problemi prima che diventino critici.",
         },
         commercial: {
           title: "Servizi Commerciali",
           description:
-            "Soluzioni specializzate per aziende e strutture industriali",
+            "Offriamo soluzioni specializzate per aziende e strutture industriali, progettate per soddisfare le esigenze uniche di ogni cliente. Dall'installazione di sistemi complessi alla manutenzione preventiva, garantiamo efficienza operativa, sicurezza e conformità agli standard normativi. Il nostro team esperto lavora con precisione per fornire risultati di alta qualità che supportano la crescita del tuo business.",
         },
         residential: {
           title: "Servizi Residenziali",
-          description: "Soluzioni elettriche complete per case e appartamenti",
+          description:
+            "Offriamo soluzioni elettriche complete per case e appartamenti, garantendo sicurezza, efficienza e comfort. Il nostro team di professionisti si occupa di installazioni, manutenzioni e riparazioni, utilizzando tecnologie moderne e materiali di alta qualità. Che si tratti di rinnovare il sistema elettrico o installare nuovi impianti, ci assicuriamo che ogni dettaglio sia curato per soddisfare le esigenze della tua abitazione.",
         },
         power: {
           title: "Sistemi di Alimentazione",
           description:
-            "Installazione e manutenzione di sistemi di distribuzione di alimentazione",
+            "Offriamo servizi professionali per l'installazione e la manutenzione di sistemi di distribuzione dell'energia. Il nostro team esperto progetta e implementa soluzioni affidabili e sicure per garantire una distribuzione efficiente e costante dell'elettricità. Ci occupiamo anche di ottimizzare i sistemi esistenti per massimizzare la loro efficienza e conformità agli standard normativi.",
         },
         lighting: {
           title: "Soluzioni di Illuminazione",
           description:
-            "Installazione di illuminazione moderna e aggiornamenti efficienti dal punto di vista energetico",
+            "Offriamo installazioni di illuminazione moderna e aggiornamenti energeticamente efficienti per migliorare l'estetica e la funzionalità di ogni spazio. Che si tratti di illuminazione residenziale, commerciale o industriale, utilizziamo tecnologie avanzate per creare soluzioni personalizzate che combinano efficienza energetica, sostenibilità e design innovativo.",
         },
       },
     },
@@ -267,22 +379,117 @@ const messages = {
       learnMore: "Scopri di più",
       items: {
         electrical: {
-          title: "Impianti Elettrici per Privati",
+          title: "Lavori in Elettricità",
           description:
-            "Soluzioni elettriche complete per case, inclusa installazione, riparazioni e aggiornamenti",
+            "Soluzioni elettriche complete per abitazioni, comprese installazioni, riparazioni e aggiornamenti.",
+          civili: {
+            title: "Impianti Elettrici Civili",
+            designAndInstall:
+              "Progettazione e installazione di impianti elettrici per abitazioni.",
+            electricalPanels:
+              "Realizzazione e collaudo di quadri elettrici, inclusa la suddivisione e il calcolo del carico.",
+            cables:
+              "Posa di cavi e fili elettrici in base agli obiettivi d’uso.",
+            lightPoints:
+              "Installazione di prese, interruttori e punti luce, sia tradizionali che smart (connessi a Internet).",
+            lightingSystems:
+              "Sistemi di illuminazione interna ed esterna personalizzati.",
+            automationDoors:
+              "Automazione di cancelli, porte, finestre, tapparelle e serrande motorizzate.",
+            electricStations:
+              "Installazione di colonnine di ricarica per veicoli elettrici.",
+            automationPanel:
+              "Realizzazione di sistemi di domotica per il controllo di luci, tapparelle e climatizzazione.",
+            renewableEnergySystems:
+              "Progettazione e installazione di pannelli solari fotovoltaici e altri sistemi di energia rinnovabile.",
+            certification:
+              "Certificazione di conformità degli impianti elettrici.",
+          },
+          industrial: {
+            title: "Impianti Elettrici Industriali",
+            designAndInstall:
+              "Progettazione e installazione di impianti elettrici per fabbriche e stabilimenti industriali.",
+            lightPoints:
+              "Realizzazione di sistemi di illuminazione industriale ad alta efficienza.",
+            industrialSystems:
+              "Posa di cavi di potenza e controllo per macchinari e sistemi industriali.",
+            electricalSafety:
+              "Soluzioni per la sicurezza elettrica e la prevenzione di guasti.",
+          },
         },
-        photovoltaic: {
-          title: "Sistemi Fotovoltaici",
-          description: "Soluzioni solari sostenibili per case e aziende",
-        },
-        automation: {
-          title: "Domotica",
-          description: "Soluzioni smart per la vita moderna",
-        },
-        companies: {
-          title: "Soluzioni per Aziende",
+        telecommunications: {
+          title: "Telecomunicazione",
           description:
-            "Servizi elettrici professionali per aziende e proprietà commerciali",
+            "Offriamo soluzioni complete di telecomunicazione, inclusi cablaggi strutturati, reti in fibra ottica e configurazioni wireless, per garantire una connettività senza interruzioni per abitazioni e aziende.",
+          designAndInstall:
+            "Progettazione e installazione di cablaggi strutturati per reti Internet in case, uffici e aziende.",
+          wirelessNetworks: "Configurazione di reti cablate e wireless.",
+          fiberOptic:
+            "Realizzazione di reti in fibra ottica (FTTH, FTTO, FTTB).",
+          starlink:
+            "Installazione di connessioni Internet basate su antenne Starlink..",
+        },
+        securitySystems: {
+          title: "Sistemi di Sicurezza",
+          description:
+            "We offer advanced security systems, including intrusion alarms, surveillance cameras, fire detection, and remote monitoring solutions for complete protection and peace of mind.",
+          alarmSystems:
+            "Installazione di sistemi di allarme antintrusione, anche wireless.",
+          surveillance:
+            "Montaggio e configurazione di telecamere di videosorveglianza (CCTV e IP).",
+          fireDetectionSystems:
+            "Sistemi avanzati di rilevamento fumo e incendi.",
+          remoteMonitoring:
+            "Integrazione dei sistemi di sicurezza con smartphone per il monitoraggio remoto.",
+        },
+        special: {
+          title: "Servizi Speciali",
+          description: "",
+          renewableEnergySystems: {
+            title: "Sistemi di Energia Rinnovabile",
+            description:
+              "Siamo specializzati nella progettazione e installazione di sistemi di energia rinnovabile, inclusi soluzioni solari, eoliche e a biomassa, per migliorare l'efficienza e promuovere la sostenibilità.",
+            designAndInstall:
+              "Progettazione e installazione di impianti fotovoltaici, eolici e a biomasse.",
+            analysisAndEfficiency:
+              "Analisi del risparmio energetico e dell’efficienza degli impianti.",
+          },
+          smartHome: {
+            title: "Domotica e Smart Home",
+            description:
+              "Offriamo soluzioni innovative di domotica, integrando sistemi smart per l'illuminazione, il controllo del clima, la sicurezza e dispositivi IoT per un'esperienza abitativa connessa e confortevole.",
+            systemsForControlling:
+              "Installazione di sistemi smart per il controllo di luci, tapparelle, climatizzazione e sicurezza.",
+            voiceAssistants:
+              "Configurazione di assistenti vocali (es. Alexa, Google Home) e dispositivi IoT.",
+          },
+          maintenanceAndDiagnostics: {
+            title: "Manutenzione e Diagnostica Avanzata",
+            description:
+              "Offriamo servizi avanzati di manutenzione e diagnostica, inclusi ispezioni termografiche e analisi predittive, per garantire prestazioni ottimali e prevenire guasti ai sistemi.",
+            thermographicInspection:
+              "Ispezioni termografiche per identificare dispersioni termiche e problemi elettrici.",
+            predictiveAnalysis:
+              "Diagnostica predittiva per prevenire guasti e migliorare l’efficienza degli impianti.",
+          },
+          chargingInfrastructure: {
+            title: "Infrastrutture di Ricarica per Veicoli Elettrici (EV)",
+            description:
+              "Forniamo soluzioni personalizzate per infrastrutture di ricarica per veicoli elettrici, inclusa l'installazione di stazioni di ricarica domestiche e commerciali e consulenze per reti efficienti e scalabili.",
+            chargingStations:
+              "Installazione di colonnine di ricarica domestiche e aziendali (Tesla e sistemi universali).",
+            consulting:
+              "Consulenza per progettare reti di ricarica efficienti e personalizzate.",
+          },
+          lighting: {
+            title: "Illuminazione Creativa e LED",
+            description:
+              "Progettiamo e installiamo soluzioni personalizzate di illuminazione creativa e a LED, combinando efficienza energetica e estetica per abitazioni, aziende ed eventi speciali.",
+            design:
+              "Progettazione di sistemi di illuminazione personalizzati per interni ed esterni.",
+            energySavings:
+              "Soluzioni a LED per risparmio energetico e decorazioni speciali (giardini, eventi, locali).",
+          },
         },
       },
       keyFeatures: "Caratteristiche Principali",
