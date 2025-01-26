@@ -188,34 +188,79 @@ onMounted(() => {
     <!-- Services Grid Section -->
     <section class="services-grid">
       <div class="service-card">
-        <h2>{{ t("services.items.electrical.title") }}</h2>
-        <p>{{ t("services.items.electrical.description") }}</p>
-        <RouterLink to="/services/electrical" class="learn-more">
-          {{ t("services.learnMore") }} →
-        </RouterLink>
+        <div class="service-text">
+          <h2>{{ t("services.items.electrical.title") }}</h2>
+          <p>{{ t("services.items.electrical.description") }}</p>
+          <RouterLink to="/services/electrical" class="learn-more">
+            {{ t("services.learnMore") }} →
+          </RouterLink>
+        </div>
+        <img
+          src="../assets/services/electrical_systems_private.png"
+          alt="Electrical"
+          class="service-image"
+        />
       </div>
       <div class="service-card">
-        <h2>{{ t("services.items.photovoltaic.title") }}</h2>
-        <p>{{ t("services.items.photovoltaic.description") }}</p>
-        <RouterLink to="/services/photovoltaic" class="learn-more">
-          {{ t("services.learnMore") }} →
-        </RouterLink>
+        <div class="service-text">
+          <h2>{{ t("services.items.photovoltaic.title") }}</h2>
+          <p>{{ t("services.items.photovoltaic.description") }}</p>
+          <RouterLink to="/services/photovoltaic" class="learn-more">
+            {{ t("services.learnMore") }} →
+          </RouterLink>
+        </div>
+        <img
+          src="../assets/services/photovoltaic_systems.png"
+          alt="Photovoltaic"
+          class="service-image"
+        />
       </div>
       <div class="service-card">
-        <h2>{{ t("services.items.automation.title") }}</h2>
-        <p>{{ t("services.items.automation.description") }}</p>
-        <RouterLink to="/services/automation" class="learn-more">
-          {{ t("services.learnMore") }} →
-        </RouterLink>
+        <div class="service-text">
+          <h2>{{ t("services.items.automation.title") }}</h2>
+          <p>{{ t("services.items.automation.description") }}</p>
+          <RouterLink to="/services/automation" class="learn-more">
+            {{ t("services.learnMore") }} →
+          </RouterLink>
+        </div>
+        <img
+          src="../assets/services/home_automation.png"
+          alt="Automation"
+          class="service-image"
+        />
       </div>
       <div class="service-card">
-        <h2>{{ t("services.items.companies.title") }}</h2>
-        <p>{{ t("services.items.companies.description") }}</p>
-        <RouterLink to="/services/companies" class="learn-more">
-          {{ t("services.learnMore") }} →
-        </RouterLink>
+        <div class="service-text">
+          <h2>{{ t("services.items.companies.title") }}</h2>
+          <p>{{ t("services.items.companies.description") }}</p>
+          <RouterLink to="/services/companies" class="learn-more">
+            {{ t("services.learnMore") }} →
+          </RouterLink>
+        </div>
+        <img
+          src="../assets/services/solutions_for_cpmpanies.png"
+          alt="Companies"
+          class="service-image"
+        />
       </div>
     </section>
+
+    <!-- Сщтефсеы Section -->
+    <div class="contact-page">
+      <h2>{{ t("contact.title") }}</h2>
+      <form class="contact-form" @submit.prevent="handleSubmit">
+        <label for="name">{{ t("contact.name") }}</label>
+        <input type="text" id="name" name="name" required />
+
+        <label for="email">{{ t("contact.email") }}</label>
+        <input type="email" id="email" name="email" required />
+
+        <label for="message">{{ t("contact.message") }}</label>
+        <textarea id="message" name="message" rows="5" required></textarea>
+
+        <button type="submit">{{ t("contact.button") }}</button>
+      </form>
+    </div>
   </div>
 </template>
 
@@ -271,7 +316,7 @@ onMounted(() => {
 }
 
 .cta-button-home {
-  background-color: #ff9b42;
+  background-color: #ff7300;
   color: #fff;
   border: none;
   padding: 1rem 2rem;
@@ -358,7 +403,7 @@ button:hover {
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  height: 50vh; /* Высота на весь экран */
+  height: 35vh; /* Высота на весь экран */
   padding: 2rem;
   box-sizing: border-box;
   position: relative;
@@ -434,10 +479,10 @@ button:hover {
 }
 
 .competency-card {
-  background-color: #f9f9f9;
+  background-color: #eeeeee;
   padding: 1.5rem;
   border-radius: 8px;
-  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 1px 3px 4px rgba(0, 0, 0, 0.3);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -505,57 +550,127 @@ button:hover {
   padding: 2rem;
 }
 
-/* Header section */
-.services-header {
-  text-align: center;
-  margin-bottom: 2rem;
-}
-
-.services-header h1 {
-  font-size: 2.5rem;
-  color: #0c4473;
-}
-
 /* Grid layout */
 .services-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
 }
 
 .service-card {
+  display: flex;
+  align-items: center;
   background-color: #fff;
-  padding: 1.5rem;
+  padding: 2rem;
   border-radius: 8px;
-  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
 }
 
-.service-card h2 {
-  font-size: 1.5rem;
-  color: #0c4473;
-  margin-bottom: 0.5rem;
+.service-card:nth-child(even) {
+  flex-direction: row-reverse; /* Чередуем расположение картинки */
 }
 
-.service-card p {
-  font-size: 1rem;
-  color: #555;
+.service-text {
+  flex: 1;
+  padding: 1rem;
+}
+
+.service-text h2 {
+  font-size: 1.8rem;
   margin-bottom: 1rem;
+  color: #0c4473;
 }
 
-.learn-more {
+.service-text p {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  color: #555;
+  line-height: 1.5;
+}
+
+.service-text .learn-more {
   color: #ff7300;
   text-decoration: none;
   font-weight: bold;
 }
 
-.learn-more:hover {
+.service-text .learn-more:hover {
   text-decoration: underline;
+}
+
+.service-image {
+  flex: 1;
+  max-width: 50%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 8px;
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
-  .services-grid {
-    grid-template-columns: 1fr;
+  .service-card {
+    flex-direction: column; /* Вертикальное размещение */
   }
+
+  .service-card:nth-child(even) {
+    flex-direction: column; /* Убираем реверс */
+  }
+
+  .service-image {
+    max-width: 100%; /* Изображение на всю ширину */
+    margin-bottom: 1rem;
+  }
+}
+
+/* Contacts Page Design */
+.contact-page {
+  padding: 4rem 2rem;
+  background-color: #fff;
+  text-align: center;
+  padding-top: 70px;
+}
+
+h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+.contact-form {
+  max-width: 500px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.contact-form label {
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+.contact-form button {
+  padding: 1rem 2rem;
+  background-color: #ff7300;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.contact-form button:hover {
+  background-color: #e36600;
 }
 </style>

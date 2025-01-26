@@ -145,7 +145,7 @@ const closeMenu = () => {
 
     <!-- Footer -->
     <footer>
-      <p>© 2025 Zimov srl. All Rights Reserved.</p>
+      <p>© 2025 Eslink. All Rights Reserved.</p>
     </footer>
   </div>
 </template>
@@ -165,11 +165,12 @@ const closeMenu = () => {
   background-color: transparent;
   box-shadow: none;
   transition: background-color 0.4s ease;
-  text-shadow: 0px 2px 3px rgba(0, 0, 0, 0.7);
+  text-shadow: 0px 2px 3px rgba(105, 104, 104, 0.7);
 }
 
 .navbar-scrolled {
   background-color: #ffffff;
+  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.7);
 }
 
 .navbar-scrolled .nav-item {
