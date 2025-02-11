@@ -9,9 +9,9 @@ const messages = {
       contacts: "Contacts",
       servicesItems: {
         electrical: "Electrical",
-        photovoltaic: "Photovoltaic",
-        automation: "Automation",
-        companies: "Companies",
+        telecommunications: "Telecommunications",
+        securitySystems: "Security Systems",
+        specialServices: "Special Services",
       },
     },
     hero: {
@@ -95,7 +95,8 @@ const messages = {
         electrical: {
           title: "Electrical Works",
           description:
-            "Complete electrical solutions for homes including installations, repairs, and upgrades",
+            "We provide complete electrical solutions for homes and industries, including installations, maintenance, and upgrades. Our services cover smart automation, lighting, EV charging stations, and industrial power systems with a focus on efficiency and safety.",
+          cta: "Schedule a Consultation",
           civili: {
             title: "Residential Electrical Systems",
             designAndInstall:
@@ -134,17 +135,19 @@ const messages = {
           title: "Telecommunications",
           description:
             "We provide comprehensive telecommunications solutions, including structured cabling, fiber optic networks, and wireless configurations to ensure seamless connectivity for homes and businesses.",
+          cta: "Schedule a Consultation",
           designAndInstall:
             "Design and installation of structured cabling for Internet networks in homes, offices, and businesses.",
           wirelessNetworks: "Configuration of wired and wireless networks.",
           fiberOptic: "Development of fiber optic networks (FTTH, FTTO, FTTB).",
-          Starlink:
+          starLink:
             "Installation of Internet connections using Starlink antennas.",
         },
         securitySystems: {
           title: "Security Systems",
           description:
             "We offer advanced security systems, including intrusion alarms, surveillance cameras, fire detection, and remote monitoring solutions for complete protection and peace of mind.",
+          cta: "Schedule a Consultation",
           alarmSystems:
             "Installation of anti-intrusion alarm systems, including wireless options.",
           surveillance:
@@ -155,7 +158,8 @@ const messages = {
         },
         special: {
           title: "Special Services",
-          description: "",
+          description:
+            "Our Special Services include renewable energy, smart home automation, advanced diagnostics, EV charging, and creative lighting. We provide innovative and efficient solutions to enhance sustainability, security, and comfort.",
           renewableEnergySystems: {
             title: "Renewable Energy Systems",
             description:
@@ -202,20 +206,6 @@ const messages = {
               "LED solutions for energy savings and special decorations (gardens, events, venues).",
           },
         },
-      },
-      keyFeatures: "Key Features",
-      electrical: {
-        title: "Electrical Systems for Private Individuals",
-        description:
-          "Our residential electrical services cover everything from basic wiring to complete home electrical system installations. We ensure your home's electrical system is safe, efficient, and up to code.",
-        features: [
-          "Electrical system installation and upgrades",
-          "Safety inspections and code compliance",
-          "Indoor and outdoor lighting installation",
-          "Circuit breaker panel services",
-          "Emergency electrical repairs",
-        ],
-        cta: "Schedule a Consultation",
       },
       photovoltaic: {
         title: "Photovoltaic Systems",
@@ -295,9 +285,9 @@ const messages = {
       contacts: "Contatti",
       servicesItems: {
         electrical: "Elettrico",
-        photovoltaic: "Fotovoltaico",
-        automation: "Automazione",
-        companies: "Aziende",
+        telecommunications: "Telecomunicazioni",
+        securitySystems: "Sistemi di Sicurezza",
+        specialServices: "Servizi Speciali",
       },
     },
     hero: {
@@ -381,7 +371,8 @@ const messages = {
         electrical: {
           title: "Lavori in Elettricità",
           description:
-            "Soluzioni elettriche complete per abitazioni, comprese installazioni, riparazioni e aggiornamenti.",
+            "Offriamo soluzioni elettriche complete per abitazioni e industrie, comprese installazioni, manutenzione e aggiornamenti. I nostri servizi includono automazione smart, illuminazione, colonnine di ricarica e sistemi industriali con attenzione a efficienza e sicurezza.",
+          cta: "Pianifica una consulenza",
           civili: {
             title: "Impianti Elettrici Civili",
             designAndInstall:
@@ -421,18 +412,20 @@ const messages = {
           title: "Telecomunicazione",
           description:
             "Offriamo soluzioni complete di telecomunicazione, inclusi cablaggi strutturati, reti in fibra ottica e configurazioni wireless, per garantire una connettività senza interruzioni per abitazioni e aziende.",
+          cta: "Pianifica una consulenza",
           designAndInstall:
             "Progettazione e installazione di cablaggi strutturati per reti Internet in case, uffici e aziende.",
           wirelessNetworks: "Configurazione di reti cablate e wireless.",
           fiberOptic:
             "Realizzazione di reti in fibra ottica (FTTH, FTTO, FTTB).",
-          starlink:
+          starLink:
             "Installazione di connessioni Internet basate su antenne Starlink..",
         },
         securitySystems: {
           title: "Sistemi di Sicurezza",
           description:
-            "We offer advanced security systems, including intrusion alarms, surveillance cameras, fire detection, and remote monitoring solutions for complete protection and peace of mind.",
+            "Offriamo sistemi di sicurezza avanzati, inclusi allarmi antintrusione, telecamere di sorveglianza, rilevamento incendi e soluzioni di monitoraggio remoto per una protezione completa e tranquillità.",
+          cta: "Pianifica una consulenza",
           alarmSystems:
             "Installazione di sistemi di allarme antintrusione, anche wireless.",
           surveillance:
@@ -444,7 +437,8 @@ const messages = {
         },
         special: {
           title: "Servizi Speciali",
-          description: "",
+          description:
+            "I nostri Servizi Speciali comprendono energia rinnovabile, domotica, diagnostica avanzata, ricarica EV e illuminazione creativa. Offriamo soluzioni innovative ed efficienti per migliorare sostenibilità, sicurezza e comfort.",
           renewableEnergySystems: {
             title: "Sistemi di Energia Rinnovabile",
             description:
@@ -492,20 +486,7 @@ const messages = {
           },
         },
       },
-      keyFeatures: "Caratteristiche Principali",
-      electrical: {
-        title: "Impianti Elettrici per Privati",
-        description:
-          "I nostri servizi elettrici residenziali coprono tutto, dai cablaggi di base alle installazioni complete degli impianti elettrici domestici. Garantiamo che il tuo impianto elettrico sia sicuro, efficiente e a norma.",
-        features: [
-          "Installazione e aggiornamento di impianti elettrici",
-          "Ispezioni di sicurezza e conformità normativa",
-          "Installazione di illuminazione interna ed esterna",
-          "Servizi per quadri elettrici",
-          "Riparazioni elettriche di emergenza",
-        ],
-        cta: "Pianifica una consulenza",
-      },
+
       photovoltaic: {
         title: "Sistemi Fotovoltaici",
         description:

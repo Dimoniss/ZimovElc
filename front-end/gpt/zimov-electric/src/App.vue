@@ -45,7 +45,9 @@ const closeMenu = () => {
   <div id="app">
     <!-- Header -->
     <header :class="['navbar', { 'navbar-scrolled': isScrolled }]">
-      <div class="logo-placeholder">LOGO</div>
+      <RouterLink to="/" class="logo-placeholder" @click="closeMenu">
+        LOGO
+      </RouterLink>
       <div class="navbar-left">
         <nav class="nav-links">
           <button
@@ -85,28 +87,28 @@ const closeMenu = () => {
                   {{ t("nav.servicesItems.electrical") }}
                 </RouterLink>
                 <RouterLink
-                  to="/services/photovoltaic"
+                  to="/services/telecommunications"
                   class="dropdown-item"
                   :class="{ 'scrolled-item': isScrolled }"
                   @click="closeMenu"
                 >
-                  {{ t("nav.servicesItems.photovoltaic") }}
+                  {{ t("nav.servicesItems.telecommunications") }}
                 </RouterLink>
                 <RouterLink
-                  to="/services/automation"
+                  to="/services/securitySystems"
                   class="dropdown-item"
                   :class="{ 'scrolled-item': isScrolled }"
                   @click="closeMenu"
                 >
-                  {{ t("nav.servicesItems.automation") }}
+                  {{ t("nav.servicesItems.securitySystems") }}
                 </RouterLink>
                 <RouterLink
-                  to="/services/companies"
+                  to="/services/specialServices"
                   class="dropdown-item"
                   :class="{ 'scrolled-item': isScrolled }"
                   @click="closeMenu"
                 >
-                  {{ t("nav.servicesItems.companies") }}
+                  {{ t("nav.servicesItems.specialServices") }}
                 </RouterLink>
               </div>
             </div>
@@ -165,20 +167,20 @@ const closeMenu = () => {
   background-color: transparent;
   box-shadow: none;
   transition: background-color 0.4s ease;
-  text-shadow: 0px 2px 3px rgba(105, 104, 104, 0.7);
+  text-align: left;
 }
 
 .navbar-scrolled {
   background-color: #ffffff;
-  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.7);
 }
 
 .navbar-scrolled .nav-item {
-  color: #000000; /* Цвет текста при скролле */
+  color: #000000; /* text color when scrolled */
+  text-align: left;
 }
 
 .navbar-scrolled .nav-item:hover {
-  color: #0c4473; /* Цвет текста при наведении, если скролл активен */
+  color: #0c4473; /* text color on hover when scrolled */
 }
 
 /* Logo Placeholder */
@@ -204,7 +206,7 @@ const closeMenu = () => {
 
 .nav-item {
   color: #ffffff;
-  transition: color 0.4s ease; /* Плавный переход цвета */
+  transition: color 0.4s ease; /* Transition for smooth color change */
   text-decoration: none;
   font-weight: 500;
   position: relative;

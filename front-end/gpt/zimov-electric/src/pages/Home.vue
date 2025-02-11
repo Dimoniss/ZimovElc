@@ -198,7 +198,9 @@ onMounted(() => {
     </section>
 
     <!-- Services Grid Section -->
+    <!-- Services Grid -->
     <section class="services-grid">
+      <!-- Electrical Works -->
       <div class="service-card">
         <div class="service-text">
           <h2>{{ t("services.items.electrical.title") }}</h2>
@@ -209,55 +211,61 @@ onMounted(() => {
         </div>
         <img
           src="../assets/services/electrical_systems_private.png"
-          alt="Electrical"
+          alt="Electrical Works"
           class="service-image"
         />
       </div>
+
+      <!-- Telecommunications -->
       <div class="service-card">
         <div class="service-text">
-          <h2>{{ t("services.items.photovoltaic.title") }}</h2>
-          <p>{{ t("services.items.photovoltaic.description") }}</p>
-          <RouterLink to="/services/photovoltaic" class="learn-more">
+          <h2>{{ t("services.items.telecommunications.title") }}</h2>
+          <p>{{ t("services.items.telecommunications.description") }}</p>
+          <RouterLink to="/services/telecommunications" class="learn-more">
             {{ t("services.learnMore") }} →
           </RouterLink>
         </div>
         <img
-          src="../assets/services/photovoltaic_systems.png"
-          alt="Photovoltaic"
+          src="../assets/services/telecommunications.png"
+          alt="Telecommunications"
           class="service-image"
         />
       </div>
+
+      <!-- Security Systems -->
       <div class="service-card">
         <div class="service-text">
-          <h2>{{ t("services.items.automation.title") }}</h2>
-          <p>{{ t("services.items.automation.description") }}</p>
-          <RouterLink to="/services/automation" class="learn-more">
+          <h2>{{ t("services.items.securitySystems.title") }}</h2>
+          <p>{{ t("services.items.securitySystems.description") }}</p>
+          <RouterLink to="/services/securitySystems" class="learn-more">
             {{ t("services.learnMore") }} →
           </RouterLink>
         </div>
         <img
-          src="../assets/services/home_automation.png"
-          alt="Automation"
+          src="../assets/services/security_systems.png"
+          alt="Security Systems"
           class="service-image"
         />
       </div>
+
+      <!-- Special Services -->
       <div class="service-card">
         <div class="service-text">
-          <h2>{{ t("services.items.companies.title") }}</h2>
-          <p>{{ t("services.items.companies.description") }}</p>
-          <RouterLink to="/services/companies" class="learn-more">
+          <h2>{{ t("services.items.special.title") }}</h2>
+          <p>{{ t("services.items.special.description") }}</p>
+          <RouterLink to="/services/specialServices" class="learn-more">
             {{ t("services.learnMore") }} →
           </RouterLink>
         </div>
         <img
-          src="../assets/services/solutions_for_cpmpanies.png"
-          alt="Companies"
+          src="../assets/services/special_services.png"
+          alt="Special Services"
           class="service-image"
         />
       </div>
     </section>
 
-    <!-- Сщтефсеы Section -->
+    <!-- Contacts Section -->
     <div class="contact-page">
       <h2>{{ t("contact.title") }}</h2>
       <form class="contact-form" @submit.prevent="handleSubmit">
@@ -556,13 +564,20 @@ button:hover {
 }
 
 /* General layout for the services page */
+/* General layout for the services page */
 .services {
   font-family: Arial, sans-serif;
   color: #333;
   padding: 2rem;
 }
 
-/* Grid layout */
+/* Header Section */
+.services-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+/* Services Grid */
 .services-grid {
   display: flex;
   flex-direction: column;
@@ -580,7 +595,7 @@ button:hover {
 }
 
 .service-card:nth-child(even) {
-  flex-direction: row-reverse; /* Чередуем расположение картинки */
+  flex-direction: row-reverse; /* Alternate layout for even cards */
 }
 
 .service-text {
@@ -622,15 +637,15 @@ button:hover {
 /* Responsive Design */
 @media (max-width: 768px) {
   .service-card {
-    flex-direction: column; /* Вертикальное размещение */
+    flex-direction: column;
   }
 
   .service-card:nth-child(even) {
-    flex-direction: column; /* Убираем реверс */
+    flex-direction: column; /* Remove reverse layout for small screens */
   }
 
   .service-image {
-    max-width: 100%; /* Изображение на всю ширину */
+    max-width: 100%;
     margin-bottom: 1rem;
   }
 }

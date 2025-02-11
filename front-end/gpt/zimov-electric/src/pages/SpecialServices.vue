@@ -1,5 +1,6 @@
 <script setup>
 import { useI18n } from "vue-i18n";
+import { RouterLink } from "vue-router";
 
 const { t } = useI18n();
 </script>
@@ -8,15 +9,21 @@ const { t } = useI18n();
   <div class="service-page">
     <!-- Header Section -->
     <section class="service-header">
-      <h1>{{ t("services.photovoltaic.title") }}</h1>
-      <p>{{ t("services.photovoltaic.description") }}</p>
+      <img
+        src="../assets/services/special_services.png"
+        alt="Security Services"
+        class="header-image"
+      />
+      <div class="header-content">
+        <h1>{{ t("services.items.special.title") }}</h1>
+        <p>{{ t("services.items.special.description") }}</p>
+      </div>
     </section>
 
     <!-- Key Features Section -->
     <section class="key-features">
-      <h2>{{ t("services.keyFeatures") }}</h2>
       <div class="features-grid">
-        <!-- First Feature -->
+        <!-- Feature 1: Renewable Energy Systems -->
         <div class="feature-item">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -31,10 +38,12 @@ const { t } = useI18n();
               d="M4.5 12.75L9 17.25L19.5 6.75"
             />
           </svg>
-          <span>{{ t("services.photovoltaic.features.0") }}</span>
+          <span>{{
+            t("services.items.special.renewableEnergySystems.description")
+          }}</span>
         </div>
 
-        <!-- Second Feature -->
+        <!-- Feature 2: Smart Home Automation -->
         <div class="feature-item">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -49,10 +58,10 @@ const { t } = useI18n();
               d="M4.5 12.75L9 17.25L19.5 6.75"
             />
           </svg>
-          <span>{{ t("services.photovoltaic.features.1") }}</span>
+          <span>{{ t("services.items.special.smartHome.description") }}</span>
         </div>
 
-        <!-- Third Feature -->
+        <!-- Feature 3: Advanced Maintenance & Diagnostics -->
         <div class="feature-item">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -67,10 +76,12 @@ const { t } = useI18n();
               d="M4.5 12.75L9 17.25L19.5 6.75"
             />
           </svg>
-          <span>{{ t("services.photovoltaic.features.2") }}</span>
+          <span>{{
+            t("services.items.special.maintenanceAndDiagnostics.description")
+          }}</span>
         </div>
 
-        <!-- Fourth Feature -->
+        <!-- Feature 4: EV Charging Infrastructure -->
         <div class="feature-item">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -85,10 +96,12 @@ const { t } = useI18n();
               d="M4.5 12.75L9 17.25L19.5 6.75"
             />
           </svg>
-          <span>{{ t("services.photovoltaic.features.3") }}</span>
+          <span>{{
+            t("services.items.special.chargingInfrastructure.description")
+          }}</span>
         </div>
 
-        <!-- Fifth Feature -->
+        <!-- Feature 5: Creative & LED Lighting -->
         <div class="feature-item">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -103,86 +116,14 @@ const { t } = useI18n();
               d="M4.5 12.75L9 17.25L19.5 6.75"
             />
           </svg>
-          <span>{{ t("services.photovoltaic.features.4") }}</span>
-        </div>
-
-        <!-- Sixth Feature -->
-        <div class="feature-item">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke-width="1.5"
-            stroke="currentColor"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              d="M4.5 12.75L9 17.25L19.5 6.75"
-            />
-          </svg>
-          <span>{{ t("services.photovoltaic.features.5") }}</span>
+          <span>{{ t("services.items.special.lighting.description") }}</span>
         </div>
       </div>
     </section>
 
     <!-- CTA Section -->
     <RouterLink to="/contacts" class="cta-button">
-      {{ t("services.photovoltaic.cta") }}
+      {{ t("services.learnMore") }}
     </RouterLink>
   </div>
 </template>
-
-<style scoped>
-/* Grid Layout for Features */
-.features-grid {
-  display: grid;
-  grid-template-columns: repeat(
-    2,
-    1fr
-  ); /* Two items per row on larger screens */
-  gap: 1.5rem; /* Spacing between items */
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-  .features-grid {
-    grid-template-columns: 1fr; /* One item per row on smaller screens */
-  }
-}
-
-/* Feature Item Styling */
-.feature-item {
-  background: #fff;
-  padding: 1rem;
-  border-radius: 8px;
-  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
-  display: flex;
-  align-items: center;
-  gap: 1rem; /* Space between icon and text */
-}
-
-.feature-item svg {
-  color: #ff7300;
-  width: 24px;
-  height: 24px;
-}
-
-/* CTA Button Styling */
-.cta-button {
-  display: inline-block;
-  margin-top: 2rem;
-  padding: 1rem 2rem;
-  background-color: #ff7300;
-  color: #fff;
-  text-decoration: none;
-  border-radius: 8px;
-  font-weight: bold;
-  font-size: 1rem;
-  transition: background-color 0.3s;
-}
-
-.cta-button:hover {
-  background-color: #e36600;
-}
-</style>

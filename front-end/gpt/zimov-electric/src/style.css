@@ -89,37 +89,41 @@ button:focus-visible {
 }
 
 .service-header {
-  text-align: left;
-  padding: 3rem 2rem;
-  background-color: #0c4473;
-  color: #fff;
   position: relative;
+  width: 100%;
+  height: 450px; /* Высота шапки */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
 }
 
-.service-header h1 {
+.header-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0; /* Картинка уходит в фон */
+  filter: brightness(60%); /* Затемнение для читаемости текста */
+}
+
+.header-content {
+  position: relative;
+  z-index: 1; /* Текст остается поверх */
+  color: white;
+  padding: 5rem;
+}
+
+.header-content h1 {
   font-size: 2.5rem;
   margin-bottom: 1rem;
 }
 
-.service-header {
-  text-align: left;
-  padding: 3rem 2rem;
-  background-color: #0c4473;
-  color: #fff;
-  position: relative; /* Important to position the pseudo-element relative to the header */
-  overflow: hidden; /* Ensure the shape stays within the container */
-}
-
-.service-header::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 200px; /* Adjust for different shapes */
-  background: #b14a00; /* Example color for shape */
-  clip-path: polygon(50% 0, 100% 100%, 0 100%);
-  z-index: 0; /* Push it to the background */
+.header-content p {
+  font-size: 1.2rem;
 }
 
 .key-features {
@@ -134,10 +138,21 @@ button:focus-visible {
   margin-bottom: 1.5rem;
 }
 
+/* Grid Layout for Features */
 .features-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1rem;
+  grid-template-columns: repeat(
+    2,
+    1fr
+  ); /* Two items per row on larger screens */
+  gap: 1.5rem; /* Spacing between items */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .features-grid {
+    grid-template-columns: 1fr; /* One item per row on smaller screens */
+  }
 }
 
 .feature-item {
@@ -152,18 +167,23 @@ button:focus-visible {
 
 .feature-item svg {
   color: #ff7300;
-  width: 24px;
-  height: 24px;
+  width: 24px !important;
+  height: 24px !important;
+  min-width: 24px;
+  min-height: 24px;
+  max-width: 24px;
+  max-height: 24px;
+  flex-shrink: 0; /* Запрещает уменьшение */
 }
 
+/* CTA Button Styling */
 .cta-button {
-  display: block;
-  margin: 2rem auto 0;
+  display: inline-block;
+  margin-top: 2rem;
   padding: 1rem 2rem;
   background-color: #ff7300;
   color: #fff;
   text-decoration: none;
-  text-align: center;
   border-radius: 8px;
   font-weight: bold;
   font-size: 1rem;
