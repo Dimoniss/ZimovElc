@@ -71,7 +71,7 @@ onMounted(() => {
 
     <!-- About Us Section -->
     <section class="about">
-      <h2>{{ t("about.title") }}</h2>
+      <h1>{{ t("about.title") }}</h1>
       <div class="values">
         <div class="value-card">
           <div class="value-text">
@@ -133,7 +133,7 @@ onMounted(() => {
 
     <!-- Core Competencies Section -->
     <section class="competencies">
-      <h2>{{ t("competencies.title") }}</h2>
+      <h1>{{ t("competencies.title") }}</h1>
       <div class="competency-grid">
         <div class="competency-card">
           <img
@@ -141,7 +141,7 @@ onMounted(() => {
             alt="Installation"
             class="competency-image"
           />
-          <h4>{{ t("competencies.items.installation.title") }}</h4>
+          <h3>{{ t("competencies.items.installation.title") }}</h3>
           <p>{{ t("competencies.items.installation.description") }}</p>
         </div>
         <div class="competency-card">
@@ -150,7 +150,7 @@ onMounted(() => {
             alt="Maintenance"
             class="competency-image"
           />
-          <h4>{{ t("competencies.items.maintenance.title") }}</h4>
+          <h3>{{ t("competencies.items.maintenance.title") }}</h3>
           <p>{{ t("competencies.items.maintenance.description") }}</p>
         </div>
         <div class="competency-card">
@@ -159,7 +159,7 @@ onMounted(() => {
             alt="Commercial"
             class="competency-image"
           />
-          <h4>{{ t("competencies.items.commercial.title") }}</h4>
+          <h3>{{ t("competencies.items.commercial.title") }}</h3>
           <p>{{ t("competencies.items.commercial.description") }}</p>
         </div>
         <div class="competency-card">
@@ -168,7 +168,7 @@ onMounted(() => {
             alt="Residential"
             class="competency-image"
           />
-          <h4>{{ t("competencies.items.residential.title") }}</h4>
+          <h3>{{ t("competencies.items.residential.title") }}</h3>
           <p>{{ t("competencies.items.residential.description") }}</p>
         </div>
         <div class="competency-card">
@@ -177,7 +177,7 @@ onMounted(() => {
             alt="Power"
             class="competency-image"
           />
-          <h4>{{ t("competencies.items.power.title") }}</h4>
+          <h3>{{ t("competencies.items.power.title") }}</h3>
           <p>{{ t("competencies.items.power.description") }}</p>
         </div>
         <div class="competency-card">
@@ -186,7 +186,7 @@ onMounted(() => {
             alt="Lighting"
             class="competency-image"
           />
-          <h4>{{ t("competencies.items.lighting.title") }}</h4>
+          <h3>{{ t("competencies.items.lighting.title") }}</h3>
           <p>{{ t("competencies.items.lighting.description") }}</p>
         </div>
       </div>
@@ -267,7 +267,7 @@ onMounted(() => {
 
     <!-- Contacts Section -->
     <div class="contact-page">
-      <h2>{{ t("contact.title") }}</h2>
+      <h1>{{ t("contact.title") }}</h1>
       <form class="contact-form" @submit.prevent="handleSubmit">
         <label for="name">{{ t("contact.name") }}</label>
         <input type="text" id="name" name="name" required />
@@ -324,9 +324,10 @@ onMounted(() => {
 }
 
 .hero h1 {
-  font-size: 2.5rem;
+  font-size: 3rem;
   margin-bottom: 2rem;
   text-shadow: 0px 1px 3px rgba(0, 0, 0, 0.7);
+  color: #fff;
 }
 
 .hero p {
@@ -383,33 +384,11 @@ onMounted(() => {
   border: 2px solid #fff;
 }
 
-button {
-  background: rgba(0, 0, 0, 0.5);
-  border: none;
-  color: #fff;
-  padding: 0.4rem;
-  cursor: pointer;
-  border-radius: 50%;
-  width: 60px;
-  height: 60px;
-  font-size: 2rem;
-}
-
-button:hover {
-  background: rgba(255, 255, 255, 0.8);
-  color: #000;
-}
-
 /* About Us Section */
 .about {
   padding: 4rem 0;
   background-color: #ffffff;
   text-align: center;
-}
-
-.about h2 {
-  font-size: 2rem;
-  margin-bottom: 2rem;
 }
 
 /* Values Section */
@@ -458,20 +437,20 @@ button:hover {
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-/* Адаптивность */
+/* Adjustments for smaller screens */
 @media (max-width: 768px) {
   .value-card {
-    flex-direction: column; /* Вертикальная структура на мобильных устройствах */
+    flex-direction: column; /* Vertical layout for smaller screens */
     height: auto;
   }
 
   .value-card:nth-child(even) {
-    flex-direction: column; /* Убираем реверс для мобильной версии */
+    flex-direction: column; /* Reverse layout for even cards */
   }
 
   .value-text,
   .value-image {
-    width: 100%; /* Элементы занимают всю ширину */
+    width: 100%; /* Elements take full width */
   }
 
   .value-image {
@@ -479,7 +458,7 @@ button:hover {
   }
 
   .value-text {
-    text-align: center; /* Текст по центру на мобильных устройствах */
+    text-align: center; /* Text is centered */
     padding: 1rem;
   }
 }
@@ -509,16 +488,11 @@ button:hover {
 }
 
 .competency-image {
-  width: 150px;
-  height: 150px;
+  width: 250px;
+  height: 250px;
   object-fit: cover;
   margin-bottom: 1rem;
   border-radius: 5%;
-}
-
-.competency-card h4 {
-  font-size: 1.2rem;
-  margin-bottom: 0.5rem;
 }
 
 .competency-card p {
