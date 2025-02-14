@@ -45,7 +45,6 @@ onMounted(() => {
 <template>
   <div class="home">
     <!-- Hero Section -->
-
     <section class="hero" :class="`hero-background-${currentSlide + 1}`">
       <h1>{{ t("hero.title") }}</h1>
       <p>{{ t("hero.subtitle") }}</p>

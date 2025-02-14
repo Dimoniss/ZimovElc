@@ -10,7 +10,16 @@ const handleSubmit = () => {
 
 <template>
   <div class="contact-page">
-    <h2>{{ t("contact.title") }}</h2>
+    <section class="service-header">
+      <img
+        src="../assets/contact_us/contact_us.png"
+        alt="Security Services"
+        class="header-image"
+      />
+      <div class="header-content">
+        <h1>{{ t("contact.title") }}</h1>
+      </div>
+    </section>
     <form class="contact-form" @submit.prevent="handleSubmit">
       <label for="name">{{ t("contact.name") }}</label>
       <input type="text" id="name" name="name" required />

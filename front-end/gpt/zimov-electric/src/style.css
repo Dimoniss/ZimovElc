@@ -116,6 +116,12 @@ button:focus-visible {
   text-align: center;
   overflow: hidden;
 }
+.service-header h1 {
+  font-size: 3rem;
+  margin-bottom: 2rem;
+  text-shadow: 0px 1px 3px rgba(0, 0, 0, 0.7);
+  color: #fff;
+}
 
 /* Services Grid */
 .services-grid {
@@ -191,13 +197,13 @@ button:focus-visible {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  z-index: 0; /* Картинка уходит в фон */
-  filter: brightness(60%); /* Затемнение для читаемости текста */
+  z-index: 0; /* Picture behind text */
+  filter: brightness(60%); /* Reduce brightness */
 }
 
 .header-content {
   position: relative;
-  z-index: 1; /* Текст остается поверх */
+  z-index: 1; /* Text above picture */
   color: white;
   padding: 5rem;
 }
@@ -286,10 +292,7 @@ button:focus-visible {
 }
 
 .contact-page {
-  padding: 4rem 2rem;
-  background-color: #fff;
-  text-align: center;
-  padding-top: 70px;
+  font-family: Arial, sans-serif;
 }
 
 .contact-form {
