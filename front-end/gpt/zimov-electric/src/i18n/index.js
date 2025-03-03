@@ -270,11 +270,68 @@ const messages = {
     },
     contact: {
       title: "Contact Us",
-      name: "Name",
+      name: "Full Name / Company Name",
       email: "Email",
+      phone: "Phone",
+      location: "Location (City/Area)",
+      serviceType: "Type of Service Required",
+      propertyType: "Property Type",
+      existingSystem: "Do you already have an existing system?",
+      certification: "Do you need certification?",
+      material: "Do you already have materials in mind?",
+      contactPreference: "Preferred Contact Method",
+      details: "Additional Information",
       message: "Message",
       button: "Send Message",
       successMessage: "Message sent successfully!",
+      services: {
+        installation:
+          "Electrical system installation (new construction/renovation)",
+        maintenance: "Maintenance/Repair of existing system",
+        lighting: "Installation of indoor/outdoor lighting",
+        automation: "Automation for shutters/gates/garage",
+        photovoltaic: "Photovoltaic system installation",
+        chargingStation: "Installation of electric vehicle charging station",
+        smartHome:
+          "Home automation systems (lights, shutters, thermostats, etc.)",
+        other: "Other (specify)",
+      },
+
+      propertyTypes: {
+        apartment: "Apartment (specify floor)",
+        house: "House/Villa",
+        condo: "Condominium",
+        office: "Office",
+        shop: "Shop",
+        warehouse: "Warehouse/Industrial Building",
+        other: "Other (specify)",
+      },
+
+      existingSystems: {
+        yesUpgrade: "Yes, and I want to upgrade/improve it",
+        noNew: "No, I need a new system",
+      },
+
+      certifications: {
+        electrical: "Yes, Electrical System Certification (DiCo)",
+        photovoltaic: "Yes, Photovoltaic System Certification",
+        charging: "Yes, Charging Station Certification",
+        none: "No, certification is not needed",
+      },
+
+      materials: {
+        own: "Yes, I have already chosen the materials",
+        advice: "No, I prefer professional advice",
+      },
+
+      contactPreferences: {
+        call: "Phone Call",
+        whatsapp: "WhatsApp",
+        email: "Email",
+        morning: "Morning",
+        afternoon: "Afternoon",
+        noPreference: "No Preference",
+      },
     },
   },
   it: {
@@ -554,9 +611,68 @@ const messages = {
       title: "Contattaci",
       name: "Nome",
       email: "Email",
+      phone: "Telefono",
+      location: "Comune di intervento",
+      serviceType: "Tipo di Servizio Richiesto",
+      propertyType: "Tipologia di Immobile",
+      existingSystem: "Hai già un impianto esistente?",
+      certification: "Hai bisogno di una certificazione?",
+      material: "Hai già idea dei materiali da usare?",
+      contactPreference: "Preferenze per il Contatto",
+      details: "Altre informazioni",
       message: "Messaggio",
       button: "Invia Messaggio",
       successMessage: "Messaggio inviato con successo!",
+      services: {
+        installation:
+          "Installazione impianto elettrico (nuova costruzione/ristrutturazione)",
+        maintenance: "Manutenzione/Riparazione impianto esistente",
+        lighting: "Installazione illuminazione interna/esterna",
+        automation: "Automazione tapparelle/cancelli/garage",
+        photovoltaic: "Installazione sistema fotovoltaico",
+        chargingStation:
+          "Installazione colonnina di ricarica per auto elettrica",
+        smartHome:
+          "Impianti domotici (controllo luci, tapparelle, termostati, ecc.)",
+        other: "Altro (specifica)",
+      },
+
+      propertyTypes: {
+        apartment: "Appartamento (indica il piano)",
+        house: "Villetta / Casa indipendente",
+        condo: "Condominio",
+        office: "Ufficio",
+        shop: "Negozio",
+        warehouse: "Capannone / Magazzino",
+        other: "Altro (specifica)",
+      },
+
+      existingSystems: {
+        yesUpgrade: "Sì, e vorrei aggiornarlo/migliorarlo",
+        noNew: "No, serve un impianto nuovo",
+      },
+
+      certifications: {
+        electrical:
+          "Sì, Dichiarazione di Conformità (DiCo) per impianto elettrico",
+        photovoltaic: "Sì, certificazione per impianto fotovoltaico",
+        charging: "Sì, certificazione per colonnina di ricarica",
+        none: "No, non serve",
+      },
+
+      materials: {
+        own: "Sì, ho già scelto io i materiali",
+        advice: "No, preferisco un consiglio",
+      },
+
+      contactPreferences: {
+        call: "Chiamata telefonica",
+        whatsapp: "WhatsApp",
+        email: "Email",
+        morning: "Mattina",
+        afternoon: "Pomeriggio",
+        noPreference: "Indifferente",
+      },
     },
   },
 };
