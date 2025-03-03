@@ -291,6 +291,16 @@ button:focus-visible {
   z-index: 1; /* Pull text to the foreground */
 }
 
+.service-card p {
+  font-size: 1.4rem;
+  color: #555;
+}
+
+.value-text p {
+  font-size: 1.4rem;
+  color: #555;
+}
+
 .contact-page {
   font-family: Arial, sans-serif;
 }
@@ -332,4 +342,11 @@ button:focus-visible {
 
 .contact-form button:hover {
   background-color: #e36600;
+}
+
+.flag-icon {
+  width: 24px; /* Size of the flag */
+  height: auto;
+  margin: 0 8px; /* Space between flag and text */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }

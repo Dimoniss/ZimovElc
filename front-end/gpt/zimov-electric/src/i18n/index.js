@@ -8,7 +8,7 @@ const messages = {
       portfolio: "Portfolio",
       contacts: "Contacts",
       servicesItems: {
-        electrical: "Electrical",
+        electrical: "Electrical Works",
         telecommunications: "Telecommunications",
         securitySystems: "Security Systems",
         specialServices: "Special Services",
@@ -284,7 +284,7 @@ const messages = {
       portfolio: "Portfolio",
       contacts: "Contatti",
       servicesItems: {
-        electrical: "Elettrico",
+        electrical: "Lavori in Elettricità",
         telecommunications: "Telecomunicazioni",
         securitySystems: "Sistemi di Sicurezza",
         specialServices: "Servizi Speciali",

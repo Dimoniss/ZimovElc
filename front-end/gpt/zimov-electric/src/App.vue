@@ -127,16 +127,11 @@ const closeMenu = () => {
       </div>
 
       <div class="language-switcher">
-        <span class="lang-label">IT</span>
-        <label class="toggle">
-          <input
-            type="checkbox"
-            :checked="isEnglish"
-            @change="toggleLanguage"
-          />
-          <span class="slider"></span>
-        </label>
-        <span class="lang-label">ENG</span>
+        <button
+          class="lang-button"
+          @click="toggleLanguage"
+          :class="{ english: isEnglish }"
+        ></button>
       </div>
     </header>
 
@@ -253,64 +248,32 @@ const closeMenu = () => {
 }
 
 /* Language Switcher */
+.lang-button {
+  width: 40px;
+  height: 25px;
+  border: none;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  cursor: pointer;
+  transition: background-image 0.3s ease-in-out;
+  background-image: url("../src/assets/header/flags/it.svg");
+  box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.7);
+  outline: none;
+  border-radius: 2px;
+}
+
+/* White background for the English flag */
+.lang-button.english {
+  background-image: url("../src/assets/header/flags/gb.svg");
+}
+
 .language-switcher {
   display: flex;
   padding: 0 3rem;
   align-items: center;
   justify-content: center;
   gap: 0.5rem; /* Space between elements */
-}
-
-.lang-label {
-  font-size: 0.9rem;
-  font-weight: bold;
-  color: #ff7300; /* White text for contrast */
-}
-
-.toggle {
-  position: relative;
-  display: inline-block;
-  width: 50px;
-  height: 25px;
-}
-
-.toggle input {
-  opacity: 0;
-  width: 0;
-  height: 0;
-}
-
-.slider {
-  position: absolute;
-  cursor: pointer;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: #ff7300; /* Default background color */
-  border-radius: 25px; /* Rounded edges */
-  transition: 0.4s;
-  box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.7);
-}
-
-.slider:before {
-  position: absolute;
-  content: "";
-  height: 19px;
-  width: 19px;
-  left: 3px;
-  bottom: 3px;
-  background-color: #000; /* Default circle color */
-  border-radius: 50%;
-  transition: 0.4s;
-}
-
-input:checked + .slider {
-  background-color: #2196f3; /* Background color when active */
-}
-
-input:checked + .slider:before {
-  transform: translateX(25px); /* Move the circle to the right */
 }
 
 /* Responsive Menu */

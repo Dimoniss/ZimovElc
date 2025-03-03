@@ -323,14 +323,14 @@ onMounted(() => {
 }
 
 .hero h1 {
-  font-size: 3rem;
+  font-size: 3.5rem;
   margin-bottom: 2rem;
   text-shadow: 0px 1px 3px rgba(0, 0, 0, 0.7);
   color: #fff;
 }
 
 .hero p {
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   margin-bottom: 2rem;
   text-shadow: 0px 1px 3px rgba(0, 0, 0, 0.7);
 }
@@ -408,11 +408,11 @@ onMounted(() => {
 }
 
 .value-card:nth-child(even) {
-  flex-direction: row-reverse; /* Чередуем порядок для четных карточек */
+  flex-direction: row-reverse; /* Reverse layout for even cards */
 }
 
 .value-text {
-  width: 50%; /* Текст занимает половину экрана */
+  width: 50%; /* Text takes half the width */
   padding: 2rem;
   text-align: left;
 }
@@ -423,13 +423,8 @@ onMounted(() => {
   display: block;
 }
 
-.value-text p {
-  font-size: 1.2rem;
-  color: #555;
-}
-
 .value-image {
-  width: 50%; /* Картинка занимает половину экрана */
+  width: 50%; /* Photo takes half the width */
   height: 100%;
   object-fit: cover;
   border-radius: 8px;
@@ -495,7 +490,7 @@ onMounted(() => {
 }
 
 .competency-card p {
-  font-size: 0.9rem;
+  font-size: 1.4rem;
   color: #555;
 }
 
