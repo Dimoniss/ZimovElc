@@ -55,7 +55,7 @@ const form = ref({
   details: "",
 });
 
-// Опции выбора (на двух языках)
+// Options for dropdowns
 const serviceOptions = computed(() => [
   t("contact.services.installation"),
   t("contact.services.maintenance"),
@@ -106,6 +106,28 @@ const contactPreferenceOptions = computed(() => [
 const handleSubmit = () => {
   alert(t("contact.successMessage"));
 };
+
+const materialLogos = ref([]);
+
+// Функция для загрузки изображений
+const loadLogos = async () => {
+  const logoFiles = import.meta.glob(
+    "../assets/materials/logo/*.{png,jpg,jpeg,svg}"
+  );
+  const logoPaths = [];
+
+  for (const path in logoFiles) {
+    const module = await logoFiles[path]();
+    logoPaths.push(module.default);
+  }
+
+  materialLogos.value = logoPaths;
+};
+
+// Загружаем логотипы при монтировании компонента
+onMounted(() => {
+  loadLogos();
+});
 </script>
 
 <template>
@@ -254,6 +276,20 @@ const handleSubmit = () => {
           <h3>{{ t("competencies.items.lighting.title") }}</h3>
           <p>{{ t("competencies.items.lighting.description") }}</p>
         </div>
+      </div>
+    </section>
+
+    <!-- Materials Logos Section -->
+    <section class="materials-logos">
+      <h1>{{ t("materials.title") }}</h1>
+      <div class="logos-grid">
+        <img
+          v-for="(logo, index) in materialLogos"
+          :key="index"
+          :src="logo"
+          alt="Material Logo"
+          class="logo-image"
+        />
       </div>
     </section>
 

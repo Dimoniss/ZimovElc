@@ -346,3 +346,34 @@ textarea {
 .submit-button:hover {
   background: #e05a00;
 }
+
+/* Materials Page */
+.materials-logos {
+  padding: 4rem 4rem;
+  background-color: #ffffff;
+  text-align: center;
+}
+
+.logos-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo-image {
+  width: 120px;
+  height: 80px;
+  object-fit: contain;
+  background-color: #fff;
+}
+
+@media (max-width: 768px) {
+  .logos-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .logo-image {
+    width: 100px;
+  }
+}
