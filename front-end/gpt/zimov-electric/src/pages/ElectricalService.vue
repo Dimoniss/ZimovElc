@@ -1,7 +1,26 @@
 <script setup>
 import { useI18n } from "vue-i18n";
+import { ref, onMounted } from "vue";
 
 const { t } = useI18n();
+
+const materialLogos = ref([]);
+const loadLogos = async () => {
+  const logoFiles = import.meta.glob(
+    "../assets/materials/ellectric/*.{png,jpg,jpeg,svg}"
+  );
+  const logoPaths = [];
+
+  for (const path in logoFiles) {
+    const module = await logoFiles[path]();
+    logoPaths.push(module.default);
+  }
+
+  materialLogos.value = logoPaths;
+};
+onMounted(() => {
+  loadLogos();
+});
 </script>
 
 <template>
@@ -16,6 +35,20 @@ const { t } = useI18n();
       <div class="header-content">
         <h1>{{ t("services.items.securitySystems.title") }}</h1>
         <p>{{ t("services.items.securitySystems.description") }}</p>
+      </div>
+    </section>
+
+    <!-- Materials Logos Section -->
+    <section class="materials-logos">
+      <h1>{{ t("materials.title") }}</h1>
+      <div class="logos-grid">
+        <img
+          v-for="(logo, index) in materialLogos"
+          :key="index"
+          :src="logo"
+          alt="Material Logo"
+          class="logo-image"
+        />
       </div>
     </section>
 

@@ -108,11 +108,9 @@ const handleSubmit = () => {
 };
 
 const materialLogos = ref([]);
-
-// Функция для загрузки изображений
 const loadLogos = async () => {
   const logoFiles = import.meta.glob(
-    "../assets/materials/logo/*.{png,jpg,jpeg,svg}"
+    "../assets/materials/all-logo/*.{png,jpg,jpeg,svg}"
   );
   const logoPaths = [];
 
@@ -123,8 +121,6 @@ const loadLogos = async () => {
 
   materialLogos.value = logoPaths;
 };
-
-// Загружаем логотипы при монтировании компонента
 onMounted(() => {
   loadLogos();
 });
@@ -611,7 +607,7 @@ onMounted(() => {
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  height: 80vh;
+  height: 55vh;
   padding: 2rem;
   box-sizing: border-box;
   position: relative;

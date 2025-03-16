@@ -14,6 +14,9 @@ const messages = {
         specialServices: "Special Services",
       },
     },
+    materials: {
+      title: "Materials used",
+    },
     hero: {
       title: "Professional and Reliable Electrical Services",
       subtitle:
@@ -346,6 +349,9 @@ const messages = {
         securitySystems: "Sistemi di Sicurezza",
         specialServices: "Servizi Speciali",
       },
+    },
+    materials: {
+      title: "Materiali utilizzati",
     },
     hero: {
       title: "Servizi Elettrici Professionali e Affidabili",
