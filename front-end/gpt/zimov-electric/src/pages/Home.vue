@@ -591,7 +591,7 @@ onMounted(() => {
 
 /* About Us Section */
 .about {
-  padding: 4rem 0;
+  padding: 2rem 0;
   background-color: #ffffff;
   text-align: center;
 }
@@ -665,7 +665,7 @@ onMounted(() => {
 
 /* Core Competencies Section */
 .competencies {
-  padding: 4rem 2rem;
+  padding: 2rem 2rem;
   background-color: #fff;
   text-align: center;
 }

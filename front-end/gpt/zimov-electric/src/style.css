@@ -133,11 +133,12 @@ button:focus-visible {
 .service-card {
   display: flex;
   align-items: center;
-  background-color: #fff;
+  justify-content: space-between;
+  width: 100%;
+  height: 65vh;
   padding: 2rem;
-  border-radius: 8px;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-  overflow: hidden;
+  box-sizing: border-box;
+  position: relative;
 }
 
 .service-card:nth-child(even) {
@@ -167,11 +168,11 @@ button:focus-visible {
 }
 
 .service-image {
-  flex: 1;
-  max-width: 50%;
-  height: auto;
+  width: 50%; /* Photo takes half the width */
+  height: 100%;
   object-fit: cover;
   border-radius: 8px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 /* Responsive Design */
@@ -182,11 +183,6 @@ button:focus-visible {
 
   .service-card:nth-child(even) {
     flex-direction: column; /* Remove reverse layout for small screens */
-  }
-
-  .service-image {
-    max-width: 100%;
-    margin-bottom: 1rem;
   }
 }
 
