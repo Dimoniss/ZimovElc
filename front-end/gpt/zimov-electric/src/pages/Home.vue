@@ -384,20 +384,42 @@ onMounted(() => {
       </div>
 
       <div class="form-container">
-        <form class="contact-form" @submit.prevent="handleSubmit">
+        <form
+          class="contact-form"
+          action="https://formspree.io/f/xzzeroqk"
+          method="POST"
+        >
           <div class="form-group">
             <label for="name">📝 {{ t("contact.name") }}</label>
-            <input type="text" id="name" v-model="form.name" required />
+            <input
+              type="text"
+              id="name"
+              name="name"
+              v-model="form.name"
+              required
+            />
           </div>
 
           <div class="form-group">
             <label for="email">📧 {{ t("contact.email") }}</label>
-            <input type="email" id="email" v-model="form.email" required />
+            <input
+              type="email"
+              id="email"
+              name="email"
+              v-model="form.email"
+              required
+            />
           </div>
 
           <div class="form-group">
             <label for="phone">📞 {{ t("contact.phone") }}</label>
-            <input type="tel" id="phone" v-model="form.phone" required />
+            <input
+              type="tel"
+              id="phone"
+              name="phone"
+              v-model="form.phone"
+              required
+            />
           </div>
 
           <div v-if="formType === 'estimate'">
@@ -406,6 +428,7 @@ onMounted(() => {
               <input
                 type="text"
                 id="location"
+                name="location"
                 v-model="form.location"
                 required
               />
@@ -413,7 +436,7 @@ onMounted(() => {
 
             <div class="form-group">
               <label for="service">📌 {{ t("contact.serviceType") }}</label>
-              <select id="service" v-model="form.service">
+              <select id="service" name="service" v-model="form.service">
                 <option
                   v-for="option in serviceOptions"
                   :key="option"
@@ -428,7 +451,11 @@ onMounted(() => {
               <label for="propertyType"
                 >🏠 {{ t("contact.propertyType") }}</label
               >
-              <select id="propertyType" v-model="form.propertyType">
+              <select
+                id="propertyType"
+                name="propertyType"
+                v-model="form.propertyType"
+              >
                 <option
                   v-for="option in propertyOptions"
                   :key="option"
@@ -443,7 +470,11 @@ onMounted(() => {
               <label for="existingSystem"
                 >⚡ {{ t("contact.existingSystem") }}</label
               >
-              <select id="existingSystem" v-model="form.existingSystem">
+              <select
+                id="existingSystem"
+                name="existingSystem"
+                v-model="form.existingSystem"
+              >
                 <option
                   v-for="option in existingSystemOptions"
                   :key="option"
@@ -458,7 +489,11 @@ onMounted(() => {
               <label for="certification"
                 >📜 {{ t("contact.certification") }}</label
               >
-              <select id="certification" v-model="form.certification">
+              <select
+                id="certification"
+                name="certification"
+                v-model="form.certification"
+              >
                 <option
                   v-for="option in certificationOptions"
                   :key="option"
@@ -471,7 +506,7 @@ onMounted(() => {
 
             <div class="form-group">
               <label for="materials">🔩 {{ t("contact.material") }}</label>
-              <select id="materials" v-model="form.materials">
+              <select id="materials" name="materials" v-model="form.materials">
                 <option
                   v-for="option in materialsOptions"
                   :key="option"
@@ -487,7 +522,11 @@ onMounted(() => {
             <label for="contactPreference"
               >📞 {{ t("contact.contactPreference") }}</label
             >
-            <select id="contactPreference" v-model="form.contactPreference">
+            <select
+              id="contactPreference"
+              name="contactPreference"
+              v-model="form.contactPreference"
+            >
               <option
                 v-for="option in contactPreferenceOptions"
                 :key="option"
@@ -500,7 +539,12 @@ onMounted(() => {
 
           <div class="form-group">
             <label for="details">💬 {{ t("contact.details") }}</label>
-            <textarea id="details" v-model="form.details" rows="4"></textarea>
+            <textarea
+              id="details"
+              name="message"
+              v-model="form.details"
+              rows="4"
+            ></textarea>
           </div>
 
           <button type="submit" class="submit-button">
