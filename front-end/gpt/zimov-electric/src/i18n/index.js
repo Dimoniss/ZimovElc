@@ -60,34 +60,34 @@ const messages = {
       title: "Core Competencies",
       items: {
         installation: {
-          title: "Electrical Installation",
+          title: "Electrical Installations",
           description:
-            "We provide professional electrical installation services for residential and commercial properties. Our team of experts handles everything from new installations to complex systems, ensuring safety, efficiency, and compliance with the highest standards. We use high-quality materials and advanced technologies to deliver durable and reliable results.",
+            "We carry out safe and efficient electrical installations for both homes and businesses. Every project is handled with high-quality materials and modern technology, fully compliant with current regulations.",
         },
         maintenance: {
-          title: "Maintenance and Repairs",
+          title: "Maintenance & Repairs",
           description:
-            "We provide comprehensive regular maintenance and emergency repair services for residential and commercial electrical systems. Our team is available for prompt and precise interventions, ensuring that every system remains safe, efficient, and compliant with standards. With a proactive approach, we identify and address issues before they escalate.",
+            "We provide fast and thorough maintenance and emergency repairs. Our proactive approach ensures your systems stay reliable and safe over time.",
         },
         commercial: {
-          title: "Commercial Services",
+          title: "Commercial Solutions",
           description:
-            "We provide specialized solutions for businesses and industrial facilities, tailored to meet the unique needs of each client. From installing complex systems to preventive maintenance, we ensure operational efficiency, safety, and compliance with regulatory standards. Our experienced team works with precision to deliver high-quality results that support the growth of your business.",
+            "We develop tailored electrical solutions for commercial and industrial environments. From planning to maintenance, we ensure optimal performance and minimal downtime.",
         },
         residential: {
           title: "Residential Services",
           description:
-            "We provide comprehensive electrical solutions for houses and apartments, ensuring safety, efficiency, and comfort. Our team of professionals handles installations, maintenance, and repairs using modern technologies and high-quality materials. Whether upgrading your electrical system or installing new equipment, we ensure every detail is tailored to meet your home's needs.",
+            "We offer complete electrical solutions for apartments, homes, and villas. Whether it's a renovation or a brand-new system, we focus on safety, comfort, and quality workmanship.",
         },
         power: {
           title: "Power Systems",
           description:
-            "We provide professional services for the installation and maintenance of power distribution systems. Our expert team designs and implements reliable and safe solutions to ensure efficient and consistent electricity distribution. We also optimize existing systems to maximize their efficiency and compliance with regulatory standards.",
+            "We design and maintain power distribution systems that guarantee stable and safe electricity flow. We also enhance existing setups for better performance.",
         },
         lighting: {
           title: "Lighting Solutions",
           description:
-            "We provide modern lighting installations and energy-efficient upgrades to enhance the aesthetics and functionality of any space. Whether for residential, commercial, or industrial lighting, we use advanced technologies to create tailored solutions that combine energy efficiency, sustainability, and innovative design.",
+            "We create lighting setups that are efficient, stylish, and tailored to your space. Perfect balance between design, brightness, and energy saving.",
         },
       },
     },
@@ -400,34 +400,34 @@ const messages = {
       title: "Competenze Chiave",
       items: {
         installation: {
-          title: "Installazione Elettrica",
+          title: "Installazioni Elettriche",
           description:
-            "Offriamo servizi professionali di installazione elettrica per proprietà residenziali e commerciali. Il nostro team di esperti si occupa di tutto, dalle nuove installazioni ai sistemi complessi, garantendo sicurezza, efficienza e conformità agli standard più elevati. Utilizziamo materiali di alta qualità e tecnologie avanzate per assicurare un risultato duraturo e affidabile.",
+            "Ci occupiamo di installazioni elettriche sicure ed efficienti per ambienti residenziali e commerciali. Ogni impianto è realizzato con materiali di qualità e tecnologie moderne, sempre nel rispetto delle normative.",
         },
         maintenance: {
           title: "Manutenzione e Riparazioni",
           description:
-            "Offriamo servizi completi di manutenzione regolare e riparazioni di emergenza per sistemi elettrici residenziali e commerciali. Il nostro team è disponibile per interventi tempestivi e accurati, assicurando che ogni impianto rimanga sicuro, efficiente e conforme agli standard. Con un approccio proattivo, identifichiamo e risolviamo i problemi prima che diventino critici.",
+            "Forniamo interventi puntuali per la manutenzione ordinaria e le riparazioni urgenti. Preveniamo guasti futuri con un approccio attento e professionale.",
         },
         commercial: {
-          title: "Servizi Commerciali",
+          title: "Soluzioni per Aziende",
           description:
-            "Offriamo soluzioni specializzate per aziende e strutture industriali, progettate per soddisfare le esigenze uniche di ogni cliente. Dall'installazione di sistemi complessi alla manutenzione preventiva, garantiamo efficienza operativa, sicurezza e conformità agli standard normativi. Il nostro team esperto lavora con precisione per fornire risultati di alta qualità che supportano la crescita del tuo business.",
+            "Sviluppiamo soluzioni su misura per attività commerciali e industrie. Garantiamo efficienza, sicurezza e continuità operativa in ogni progetto.",
         },
         residential: {
-          title: "Servizi Residenziali",
+          title: "Servizi per la Casa",
           description:
-            "Offriamo soluzioni elettriche complete per case e appartamenti, garantendo sicurezza, efficienza e comfort. Il nostro team di professionisti si occupa di installazioni, manutenzioni e riparazioni, utilizzando tecnologie moderne e materiali di alta qualità. Che si tratti di rinnovare il sistema elettrico o installare nuovi impianti, ci assicuriamo che ogni dettaglio sia curato per soddisfare le esigenze della tua abitazione.",
+            "Realizziamo impianti elettrici affidabili per case e appartamenti. Che si tratti di una nuova installazione o di una ristrutturazione, lavoriamo con attenzione e competenza.",
         },
         power: {
           title: "Sistemi di Alimentazione",
           description:
-            "Offriamo servizi professionali per l'installazione e la manutenzione di sistemi di distribuzione dell'energia. Il nostro team esperto progetta e implementa soluzioni affidabili e sicure per garantire una distribuzione efficiente e costante dell'elettricità. Ci occupiamo anche di ottimizzare i sistemi esistenti per massimizzare la loro efficienza e conformità agli standard normativi.",
+            "Progettiamo impianti di distribuzione dell’energia che assicurano continuità e sicurezza. Ottimizziamo anche sistemi esistenti per migliorarne prestazioni e affidabilità.",
         },
         lighting: {
           title: "Soluzioni di Illuminazione",
           description:
-            "Offriamo installazioni di illuminazione moderna e aggiornamenti energeticamente efficienti per migliorare l'estetica e la funzionalità di ogni spazio. Che si tratti di illuminazione residenziale, commerciale o industriale, utilizziamo tecnologie avanzate per creare soluzioni personalizzate che combinano efficienza energetica, sostenibilità e design innovativo.",
+            "Progettiamo illuminazioni eleganti ed efficienti. Ogni soluzione valorizza l’ambiente combinando estetica, comfort visivo e risparmio energetico.",
         },
       },
     },
