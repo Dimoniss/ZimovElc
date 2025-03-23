@@ -273,6 +273,10 @@ const messages = {
     },
     contact: {
       title: "Contact Us",
+      types: {
+        estimate: "Estimate",
+        consultation: "Consultation",
+      },
       name: "Full Name / Company Name",
       email: "Email",
       phone: "Phone",
@@ -615,6 +619,10 @@ const messages = {
     },
     contact: {
       title: "Contattaci",
+      types: {
+        estimate: "Preventivo",
+        consultation: "Consulenza",
+      },
       name: "Nome",
       email: "Email",
       phone: "Telefono",

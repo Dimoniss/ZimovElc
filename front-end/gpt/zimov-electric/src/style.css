@@ -316,8 +316,31 @@ button:focus-visible {
 }
 
 label {
-  font-weight: bold;
   margin-bottom: 5px;
+}
+
+.form-toggle-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.form-toggle-buttons button {
+  padding: 0.6rem 1.2rem;
+  border: 2px solid #0c4473;
+  background: white;
+  color: #0c4473;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.form-toggle-buttons button.active,
+.form-toggle-buttons button:hover {
+  background: #0c4473;
+  color: white;
 }
 
 input,

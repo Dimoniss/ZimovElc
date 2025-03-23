@@ -10,6 +10,8 @@ import heroBackground4 from "../assets/hero-slide/slide_4.jpg";
 
 const { t } = useI18n(); // Use the translation function
 
+const formType = ref("estimate"); // "estimate" or "consultation"
+
 // list of images for the slider
 const sliderImages = ref([
   { src: heroBackground1, text: "Slide 1" },
@@ -365,9 +367,24 @@ onMounted(() => {
     <!-- Contacts Section -->
     <div class="contact-page">
       <h1>{{ t("contact.title") }}</h1>
+
+      <div class="form-toggle-buttons">
+        <button
+          :class="{ active: formType === 'estimate' }"
+          @click="formType = 'estimate'"
+        >
+          {{ t("contact.types.estimate") }}
+        </button>
+        <button
+          :class="{ active: formType === 'consultation' }"
+          @click="formType = 'consultation'"
+        >
+          {{ t("contact.types.consultation") }}
+        </button>
+      </div>
+
       <div class="form-container">
         <form class="contact-form" @submit.prevent="handleSubmit">
-          <!-- Информация о пользователе -->
           <div class="form-group">
             <label for="name">📝 {{ t("contact.name") }}</label>
             <input type="text" id="name" v-model="form.name" required />
@@ -383,79 +400,87 @@ onMounted(() => {
             <input type="tel" id="phone" v-model="form.phone" required />
           </div>
 
-          <div class="form-group">
-            <label for="location">📍 {{ t("contact.location") }}</label>
-            <input type="text" id="location" v-model="form.location" required />
-          </div>
+          <div v-if="formType === 'estimate'">
+            <div class="form-group">
+              <label for="location">📍 {{ t("contact.location") }}</label>
+              <input
+                type="text"
+                id="location"
+                v-model="form.location"
+                required
+              />
+            </div>
 
-          <!-- Выпадающие списки -->
-          <div class="form-group">
-            <label for="service">📌 {{ t("contact.serviceType") }}</label>
-            <select id="service" v-model="form.service">
-              <option
-                v-for="option in serviceOptions"
-                :key="option"
-                :value="option"
-              >
-                {{ option }}
-              </option>
-            </select>
-          </div>
+            <div class="form-group">
+              <label for="service">📌 {{ t("contact.serviceType") }}</label>
+              <select id="service" v-model="form.service">
+                <option
+                  v-for="option in serviceOptions"
+                  :key="option"
+                  :value="option"
+                >
+                  {{ option }}
+                </option>
+              </select>
+            </div>
 
-          <div class="form-group">
-            <label for="propertyType">🏠 {{ t("contact.propertyType") }}</label>
-            <select id="propertyType" v-model="form.propertyType">
-              <option
-                v-for="option in propertyOptions"
-                :key="option"
-                :value="option"
+            <div class="form-group">
+              <label for="propertyType"
+                >🏠 {{ t("contact.propertyType") }}</label
               >
-                {{ option }}
-              </option>
-            </select>
-          </div>
+              <select id="propertyType" v-model="form.propertyType">
+                <option
+                  v-for="option in propertyOptions"
+                  :key="option"
+                  :value="option"
+                >
+                  {{ option }}
+                </option>
+              </select>
+            </div>
 
-          <div class="form-group">
-            <label for="existingSystem"
-              >⚡ {{ t("contact.existingSystem") }}</label
-            >
-            <select id="existingSystem" v-model="form.existingSystems">
-              <option
-                v-for="option in existingSystemOptions"
-                :key="option"
-                :value="option"
+            <div class="form-group">
+              <label for="existingSystem"
+                >⚡ {{ t("contact.existingSystem") }}</label
               >
-                {{ option }}
-              </option>
-            </select>
-          </div>
+              <select id="existingSystem" v-model="form.existingSystem">
+                <option
+                  v-for="option in existingSystemOptions"
+                  :key="option"
+                  :value="option"
+                >
+                  {{ option }}
+                </option>
+              </select>
+            </div>
 
-          <div class="form-group">
-            <label for="certification"
-              >📜 {{ t("contact.certification") }}</label
-            >
-            <select id="certification" v-model="form.certification">
-              <option
-                v-for="option in certificationOptions"
-                :key="option"
-                :value="option"
+            <div class="form-group">
+              <label for="certification"
+                >📜 {{ t("contact.certification") }}</label
               >
-                {{ option }}
-              </option>
-            </select>
-          </div>
+              <select id="certification" v-model="form.certification">
+                <option
+                  v-for="option in certificationOptions"
+                  :key="option"
+                  :value="option"
+                >
+                  {{ option }}
+                </option>
+              </select>
+            </div>
 
-          <div class="form-group">
-            <label for="materials">🔩 {{ t("contact.material") }}</label>
-            <select id="materials" v-model="form.materials">
-              <option
-                v-for="option in materialsOptions"
-                :key="option"
-                :value="option"
-              >
-                {{ option }}
-              </option>
-            </select>
+            <div class="form-group">
+              <label for="materials">🔩 {{ t("contact.material") }}</label>
+              <select id="materials" v-model="form.materials">
+                <option
+                  v-for="option in materialsOptions"
+                  :key="option"
+                  :value="option"
+                >
+                  {{ option }}
+                </option>
+              </select>
+            </div>
           </div>
 
           <div class="form-group">
@@ -473,13 +498,11 @@ onMounted(() => {
             </select>
           </div>
 
-          <!-- Поле для дополнительной информации -->
           <div class="form-group">
             <label for="details">💬 {{ t("contact.details") }}</label>
             <textarea id="details" v-model="form.details" rows="4"></textarea>
           </div>
 
-          <!-- Кнопка отправки -->
           <button type="submit" class="submit-button">
             {{ t("contact.button") }}
           </button>
@@ -737,7 +760,6 @@ onMounted(() => {
   }
 }
 
-/* General layout for the services page */
 /* General layout for the services page */
 .services {
   font-family: Arial, sans-serif;
