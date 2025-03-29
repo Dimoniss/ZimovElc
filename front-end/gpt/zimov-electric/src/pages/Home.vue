@@ -58,18 +58,18 @@ const loadSliderImages = async () => {
     });
   }
 
-  for (let i = 0; i < sortedPaths2.length; i++) {
-    const path = sortedPaths2[i];
-    const mod = await slideFiles2[path]();
-    const fileName = path.split("/").pop();
-    const folderName = path.split("/").slice(-2, -1)[0];
+  //for (let i = 0; i < sortedPaths2.length; i++) {
+  //  const path = sortedPaths2[i];
+  //  const mod = await slideFiles2[path]();
+  //  const fileName = path.split("/").pop();
+  //  const folderName = path.split("/").slice(-2, -1)[0];
 
-    loadedSlides.push({
-      src: mod.default,
-      fileName,
-      folderName,
-    });
-  }
+  //  loadedSlides.push({
+  //    src: mod.default,
+  //    fileName,
+  //    folderName,
+  //  });
+  //}
 
   sliderImages.value = loadedSlides;
   backgroundImage.value = loadedSlides[0];
