@@ -1,27 +1,71 @@
 <script setup>
-import { ref, onMounted, computed } from "vue";
+import { ref, onMounted, computed, watch } from "vue";
 import { useI18n } from "vue-i18n";
-import { RouterView, RouterLink } from "vue-router";
-
-import heroBackground1 from "../assets/hero-slide/slide_1.jpg";
-import heroBackground2 from "../assets/hero-slide/slide_2.jpg";
-import heroBackground3 from "../assets/hero-slide/slide_3.jpg";
-import heroBackground4 from "../assets/hero-slide/slide_4.jpg";
 
 const { t } = useI18n(); // Use the translation function
 
 const formType = ref("estimate"); // "estimate" or "consultation"
+const sliderImages = ref([]); // будет заполнен динамически
+const currentSlide = ref(0);
+const backgroundImage = ref(null);
 
-// list of images for the slider
-const sliderImages = ref([
-  { src: heroBackground1, text: "Slide 1" },
-  { src: heroBackground2, text: "Slide 2" },
-  { src: heroBackground3, text: "Slide 3" },
-  { src: heroBackground4, text: "Slide 4" },
-]);
+// ...
+const slidesContainer = ref(null); // ссылка на .slides
 
-const currentSlide = ref(0); // Current slide index
-const backgroundImage = ref(sliderImages.value[0]); // Initial background image
+watch(currentSlide, () => {
+  scrollToCenter();
+});
+
+const scrollToCenter = () => {
+  if (!slidesContainer.value) return;
+
+  const container = slidesContainer.value;
+  const slideEls = container.querySelectorAll("img");
+
+  const current = slideEls[currentSlide.value];
+  if (!current) return;
+
+  const containerWidth = container.clientWidth;
+  const slideOffsetLeft = current.offsetLeft;
+  const slideWidth = current.clientWidth;
+
+  const scrollPosition = slideOffsetLeft - containerWidth / 2 + slideWidth / 2;
+  container.scrollTo({
+    left: scrollPosition,
+    behavior: "smooth",
+  });
+};
+
+// Динамическая загрузка слайдов из папки
+const loadSliderImages = async () => {
+  const slideFiles = import.meta.glob("../assets/hero-slide/*.jpg");
+  const slideFiles2 = import.meta.glob("../assets/services/*.png");
+  const loadedSlides = [];
+
+  const sortedPaths = Object.keys(slideFiles).sort();
+  const sortedPaths2 = Object.keys(slideFiles2).sort();
+
+  for (let i = 0; i < sortedPaths.length; i++) {
+    const path = sortedPaths[i];
+    const mod = await slideFiles[path]();
+    loadedSlides.push({
+      src: mod.default,
+      text: `Slide ${i + 1}`,
+    });
+  }
+
+  for (let i = 0; i < sortedPaths2.length; i++) {
+    const path = sortedPaths2[i];
+    const mod = await slideFiles2[path]();
+    loadedSlides.push({
+      src: mod.default,
+      text: `Slide ${i + 1}`,
+    });
+  }
+
+  sliderImages.value = loadedSlides;
+  backgroundImage.value = loadedSlides[0];
+};
 
 // function to change to next slide
 const nextSlide = () => {
@@ -34,13 +78,15 @@ const prevSlide = () => {
   currentSlide.value =
     (currentSlide.value - 1 + sliderImages.value.length) %
     sliderImages.value.length;
+  backgroundImage.value = sliderImages.value[currentSlide.value];
 };
 
 // automatic slide change
 onMounted(() => {
+  loadSliderImages();
   setInterval(() => {
     nextSlide();
-  }, 5000); // change slide every 5 seconds
+  }, 5000);
 });
 
 const form = ref({
@@ -131,7 +177,10 @@ onMounted(() => {
 <template>
   <div class="home">
     <!-- Hero Section -->
-    <section class="hero" :class="`hero-background-${currentSlide + 1}`">
+    <section
+      class="hero"
+      :style="{ backgroundImage: `url(${backgroundImage?.src || ''})` }"
+    >
       <h1>{{ t("hero.title") }}</h1>
       <p>{{ t("hero.subtitle") }}</p>
       <p>{{ t("hero.description") }}</p>
@@ -141,7 +190,7 @@ onMounted(() => {
       <!-- Slider -->
       <div class="slider">
         <button class="slider-button left" @click="prevSlide">‹</button>
-        <div class="slides">
+        <div class="slides" ref="slidesContainer">
           <img
             v-for="(slide, index) in sliderImages"
             :key="index"
@@ -618,6 +667,7 @@ onMounted(() => {
   cursor: pointer;
   border-radius: 5px;
   transition: background-color 0.3s ease;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
 }
 
 .cta-button-home:hover {
@@ -638,9 +688,15 @@ onMounted(() => {
 
 .slides {
   display: flex;
-  overflow: hidden;
+  overflow-x: auto;
+  scroll-behavior: smooth;
   width: 60%;
   max-height: 160px;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none; /* Firefox */
+}
+.slides::-webkit-scrollbar {
+  display: none; /* Chrome */
 }
 
 .slides img {
@@ -649,6 +705,7 @@ onMounted(() => {
   margin: 0 5px;
   opacity: 0.6;
   transition: opacity 0.5s ease-in-out;
+  scroll-snap-align: center;
 }
 
 .slides img.active {
