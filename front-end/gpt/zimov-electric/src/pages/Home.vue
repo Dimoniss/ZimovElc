@@ -48,18 +48,26 @@ const loadSliderImages = async () => {
   for (let i = 0; i < sortedPaths.length; i++) {
     const path = sortedPaths[i];
     const mod = await slideFiles[path]();
+    const fileName = path.split("/").pop();
+    const folderName = path.split("/").slice(-2, -1)[0];
+
     loadedSlides.push({
       src: mod.default,
-      text: `Slide ${i + 1}`,
+      fileName,
+      folderName,
     });
   }
 
   for (let i = 0; i < sortedPaths2.length; i++) {
     const path = sortedPaths2[i];
     const mod = await slideFiles2[path]();
+    const fileName = path.split("/").pop();
+    const folderName = path.split("/").slice(-2, -1)[0];
+
     loadedSlides.push({
       src: mod.default,
-      text: `Slide ${i + 1}`,
+      fileName,
+      folderName,
     });
   }
 
@@ -191,13 +199,19 @@ onMounted(() => {
       <div class="slider">
         <button class="slider-button left" @click="prevSlide">‹</button>
         <div class="slides" ref="slidesContainer">
-          <img
+          <div
+            class="slide-card"
             v-for="(slide, index) in sliderImages"
             :key="index"
-            :src="slide.src"
-            :alt="'Slide ' + (index + 1)"
             :class="{ active: index === currentSlide }"
-          />
+          >
+            <img
+              :src="slide.src"
+              :alt="slide.fileName"
+              @click="currentSlide = index"
+            />
+            <div class="slide-caption">{{ slide.folderName }}</div>
+          </div>
         </div>
         <button class="slider-button right" @click="nextSlide">›</button>
       </div>
@@ -606,22 +620,6 @@ onMounted(() => {
 </template>
 
 <style scoped>
-.hero-background-1 {
-  background-image: url("../assets/hero-slide/slide_1.jpg");
-}
-
-.hero-background-2 {
-  background-image: url("../assets/hero-slide/slide_2.jpg");
-}
-
-.hero-background-3 {
-  background-image: url("../assets/hero-slide/slide_3.jpg");
-}
-
-.hero-background-4 {
-  background-image: url("../assets/hero-slide/slide_4.jpg");
-}
-
 /* General Layout */
 .home {
   font-family: Arial, sans-serif;
@@ -637,11 +635,11 @@ onMounted(() => {
   background-position: center;
   transition: background-image 1s ease-in-out; /* Smooth background change */
   color: #fff;
-  min-height: 800px;
+  min-height: 660px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
 }
 
 .hero h1 {
@@ -675,6 +673,7 @@ onMounted(() => {
 }
 
 /* Slider */
+/* Slider */
 .slider {
   position: absolute;
   bottom: 1rem;
@@ -683,7 +682,7 @@ onMounted(() => {
   justify-content: center;
   gap: 1rem;
   width: 100%;
-  height: 170px;
+  height: 200px;
 }
 
 .slides {
@@ -691,7 +690,7 @@ onMounted(() => {
   overflow-x: auto;
   scroll-behavior: smooth;
   width: 60%;
-  max-height: 160px;
+  max-height: 190px;
   scroll-snap-type: x mandatory;
   scrollbar-width: none; /* Firefox */
 }
@@ -699,18 +698,49 @@ onMounted(() => {
   display: none; /* Chrome */
 }
 
-.slides img {
-  width: 200px;
-  height: 150px;
+/* Новая структура карточки */
+.slide-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
   margin: 0 5px;
-  opacity: 0.6;
-  transition: opacity 0.5s ease-in-out;
+  width: 220px;
+  height: 190px;
   scroll-snap-align: center;
+  opacity: 1;
+  transition: opacity 0.3s;
+  cursor: pointer;
 }
 
-.slides img.active {
+.slide-card.active {
   opacity: 1;
-  border: 2px solid #fff;
+}
+
+.slide-card img {
+  width: 220px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+  border: 2px solid transparent;
+  transition: border 0.3s;
+}
+
+.slide-card.active img {
+  border-color: #ffffff;
+  border-width: 3.5px;
+}
+
+.slide-caption {
+  margin-top: 0.3rem;
+  font-size: 1.2rem;
+  color: #fff;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.8);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
 }
 
 /* About Us Section */
